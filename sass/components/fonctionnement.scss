@@ -1,0 +1,57 @@
+.fonctionnement{
+    padding-left: 20px;
+    padding-top: 40px;
+    padding-bottom: 50px;
+    padding-right: 20px;
+    &_titre{
+        margin-bottom: 25px;
+    }
+    &_liste{
+        margin-left: 12px;
+    }
+}
+
+ol {
+    counter-reset: compteListe;
+  & li::before {
+    counter-increment: compteListe 1;
+    content: counter(compteListe) " ";
+    background: $primary-color;
+    border-radius:50%;
+    width: 25px;
+    height: 25px;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+    position: absolute;
+    display: flex;
+    margin-top: -2px;
+    margin-left: -50px;
+    }
+    & li{
+    cursor: pointer;
+    background: $background-color-main;
+    box-shadow: 1px 4px 9px 1px rgb(0 0 0 / 10%);
+    position: relative;
+    justify-content: center;
+    align-items: center;
+    border-radius: 25px;
+    height : 80px;
+    margin-bottom: 30px;
+    padding-top: 30px;
+    padding-left: 37px;
+        & i{
+            color: #777777;
+            margin-right: 20px;
+        }
+        & span{
+            font-weight: bold;
+        }
+        &:hover{
+            background: #f5edff;
+        }
+        &:hover i{
+                color: $primary-color;
+        }  
+        }
+    }

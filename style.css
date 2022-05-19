@@ -1,0 +1,194 @@
+@charset "UTF-8";
+/* Un nom de police suivi d'un nom de famille générique */
+/* Un nom de police suivi d'un nom de famille générique */
+* {
+  font-family: Roboto, sans-serif;
+  box-sizing: border-box;
+  /* indique au navigateur de prendre en compte la bordure et le remplissage dans la valeur définie pour la largeur
+  et la hauteur */
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  min-width: 320px;
+}
+
+a {
+  text-decoration: none;
+  color: black;
+}
+
+li {
+  list-style-type: none;
+}
+
+#logo {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  padding-top: 40px;
+  padding-bottom: 25px;
+}
+
+.logo {
+  /* background: red;*/
+  z-index: 1;
+}
+
+#localisation {
+  box-shadow: inset 0px 2px 5px #cacbcb;
+  display: flex;
+  justify-content: center;
+  background: #e6e6e7;
+  padding-top: 30px;
+  padding-bottom: 30px;
+}
+
+#selection-lieu {
+  font-weight: bold;
+  margin-left: 20px;
+}
+
+@media screen and (max-width: 768px) {
+  #logo {
+    width: 45%;
+    padding-top: 25px;
+    padding-bottom: 15px;
+  }
+
+  #localisation {
+    padding-top: 15px;
+    padding-bottom: 15px;
+  }
+}
+.recherche {
+  background: #f6f6f6;
+  text-align: center;
+  padding-left: 20px;
+  padding-right: 20px;
+  padding-top: 40px;
+  padding-bottom: 60px;
+}
+
+.recherche_titre, .recherche_texte {
+  margin-bottom: 15px;
+}
+
+.recherche_titre {
+  margin-left: 40px;
+  margin-right: 40px;
+}
+
+.recherche_texte {
+  color: #6e6e6e;
+  font-size: 18px;
+}
+
+button {
+  cursor: pointer;
+  font-size: 16px;
+  border: none;
+  border-radius: 30px;
+  width: 220px;
+  height: 50px;
+  margin-top: 20px;
+  padding: 10px;
+  color: white;
+  background: linear-gradient(#FF79DA, #9356DC);
+}
+
+.fonctionnement {
+  padding-left: 20px;
+  padding-top: 40px;
+  padding-bottom: 50px;
+  padding-right: 20px;
+}
+.fonctionnement_titre {
+  margin-bottom: 25px;
+}
+.fonctionnement_liste {
+  margin-left: 12px;
+}
+
+ol {
+  counter-reset: compteListe;
+}
+ol li::before {
+  counter-increment: compteListe 1;
+  content: counter(compteListe) " ";
+  background: #9356DC;
+  border-radius: 50%;
+  width: 25px;
+  height: 25px;
+  justify-content: center;
+  align-items: center;
+  color: #fff;
+  position: absolute;
+  display: flex;
+  margin-top: -2px;
+  margin-left: -50px;
+}
+ol li {
+  cursor: pointer;
+  background: #f6f6f6;
+  box-shadow: 1px 4px 9px 1px rgba(0, 0, 0, 0.1);
+  position: relative;
+  justify-content: center;
+  align-items: center;
+  border-radius: 25px;
+  height: 80px;
+  margin-bottom: 30px;
+  padding-top: 30px;
+  padding-left: 37px;
+}
+ol li i {
+  color: #777777;
+  margin-right: 20px;
+}
+ol li span {
+  font-weight: bold;
+}
+ol li:hover {
+  background: #f5edff;
+}
+ol li:hover i {
+  color: #9356DC;
+}
+
+.restaurants {
+  background: #f6f6f6;
+}
+
+.footer {
+  padding-top: 20px;
+  padding-left: 30px;
+  padding-bottom: 20px;
+  background-color: #343434;
+  color: white;
+}
+.footer_titre_font {
+  font-family: Shrikhand, cursive;
+  font-weight: lighter;
+  margin-bottom: 20px;
+}
+.footer_menu_item1 {
+  margin-right: 15px;
+}
+.footer_menu_item2 {
+  margin-right: 10px;
+}
+.footer_menu li {
+  margin-bottom: 10px;
+}
+.footer_menu a {
+  color: white;
+}
+
+@media screen and (min-width: 768px) {
+  .footer, ul {
+    display: flex;
+  }
+}
+
+/*# sourceMappingURL=style.css.map */

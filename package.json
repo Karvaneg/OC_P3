@@ -1,0 +1,14 @@
+{
+  "name": "dynamisez_une_page_web_avec_des_animations_css_lecarvennec_marie",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "sass": "sass --watch ./sass/main.scss style.css"
+  },
+  "author": "Marie Le Carvennec",
+  "license": "ISC",
+  "dependencies": {
+    "sass": "^1.51.0"
+  }
+}

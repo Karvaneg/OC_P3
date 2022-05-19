@@ -1,0 +1,31 @@
+.footer{
+    padding-top: 20px;
+    padding-left: 30px;
+    padding-bottom: 20px;
+    background-color:#343434;
+    color: white;
+    &_titre_font{
+        font-family: $titles-logo-font;
+        font-weight: lighter;
+        margin-bottom: 20px;
+    }
+    &_menu{
+        &_item1{
+            margin-right: 15px;
+        }
+        &_item2{
+            margin-right: 10px;
+        }
+        & li{
+            margin-bottom: 10px;
+        }
+        & a{
+            color: white;
+        }
+    }
+}
+@media screen and (min-width: $tablette-version) {
+    .footer, ul{
+        display: flex;
+    }
+}
