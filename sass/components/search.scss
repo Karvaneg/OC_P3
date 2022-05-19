@@ -5,27 +5,18 @@
     padding-right: 20px;
     padding-top: 40px;
     padding-bottom: 60px;
-}
-.recherche_titre, .recherche_texte{
-    margin-bottom: 15px;
-}
-.recherche_titre{
-    margin-left: 40px;
-    margin-right: 40px;
-}
-.recherche_texte{
-    color: #6e6e6e;
-    font-size: 18px;
-}
-button{
-    cursor: pointer;
-    font-size: 16px;
-    border: none;
-    border-radius: 30px;
-    width: 220px;
-    height: 50px;
-    margin-top: 20px;
-    padding: 10px;
-    color: white;
-    background: linear-gradient($secondary-color, $primary-color);
+    &_titre{
+        margin-bottom: 15px;
+        margin-left: 40px;
+        margin-right: 40px;
+    }
+    &_texte{
+        margin-bottom: 15px;
+        color: $color-text-recherche-accueil;
+        font-size: 18px;
+    }
+    & button{
+        @include bouton_action_format; /* Appel du format "action" du bouton */
+        margin-top: 20px;
+    }
 }
