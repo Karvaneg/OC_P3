@@ -1,3 +1,49 @@
 .restaurants{
     background: $background-color-main;
+    padding: 50px 20px 40px 20px;
+    &_carte-restaurant{
+        border-radius: 15px;
+        margin-top: 20px;
+        margin-bottom: 26px;
+        background: white;
+        box-shadow: 0px 4px 5px 1px rgb(0 0 0 / 12%);
+        position: relative;
+        &_image a{
+            position: absolute;
+            width: 100%;
+            height: 100%;
+        }
+        &_nouveau{
+            color: #008766;
+            background: $tertiary-color;
+            border-radius: 2px;
+            position: absolute;
+            padding: 6px 0px 6px 11px;
+            width: 78px;
+            right: 12px;
+            top: 14px;
+            font-size: 14px;
+            font-weight: 600;
+        }
+        &_details{
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+          /*  padding-top: 193px;
+            padding-top: 182px;
+    padding-left: 13px;
+    padding-right: 20px;
+    padding-bottom: 15px;*/
+            padding: 182px 20px 15px 13px;
+            & .fa-heart{
+                font-size: 25px;
+            }
+        }
+    }
+    & img{
+        object-fit: cover;
+        border-radius: 15px 15px 0px 0px;
+        width: 100%;
+        height: 170px;
+    }
 }

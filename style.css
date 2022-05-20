@@ -102,10 +102,7 @@ li {
 }
 
 .fonctionnement {
-  padding-left: 20px;
-  padding-top: 40px;
-  padding-bottom: 50px;
-  padding-right: 20px;
+  padding: 40px 20px 40px 20px;
 }
 .fonctionnement_titre {
   margin-bottom: 25px;
@@ -161,6 +158,52 @@ ol li:hover i {
 
 .restaurants {
   background: #f6f6f6;
+  padding: 50px 20px 40px 20px;
+}
+.restaurants_carte-restaurant {
+  border-radius: 15px;
+  margin-top: 20px;
+  margin-bottom: 26px;
+  background: white;
+  box-shadow: 0px 4px 5px 1px rgba(0, 0, 0, 0.12);
+  position: relative;
+}
+.restaurants_carte-restaurant_image a {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
+.restaurants_carte-restaurant_nouveau {
+  color: #008766;
+  background: #99E2D0;
+  border-radius: 2px;
+  position: absolute;
+  padding: 6px 0px 6px 11px;
+  width: 78px;
+  right: 12px;
+  top: 14px;
+  font-size: 14px;
+  font-weight: 600;
+}
+.restaurants_carte-restaurant_details {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  /*  padding-top: 193px;
+          padding-top: 182px;
+  padding-left: 13px;
+  padding-right: 20px;
+  padding-bottom: 15px;*/
+  padding: 182px 20px 15px 13px;
+}
+.restaurants_carte-restaurant_details .fa-heart {
+  font-size: 25px;
+}
+.restaurants img {
+  object-fit: cover;
+  border-radius: 15px 15px 0px 0px;
+  width: 100%;
+  height: 170px;
 }
 
 .footer {
