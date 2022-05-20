@@ -29,14 +29,12 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
-          /*  padding-top: 193px;
-            padding-top: 182px;
-    padding-left: 13px;
-    padding-right: 20px;
-    padding-bottom: 15px;*/
             padding: 182px 20px 15px 13px;
             & .fa-heart{
                 font-size: 25px;
+                position: absolute;
+                right: 25px;
+                bottom: 22px;
             }
         }
     }
@@ -45,5 +43,30 @@
         border-radius: 15px 15px 0px 0px;
         width: 100%;
         height: 170px;
+    }
+}
+@media screen and (min-width: $tablette-version) and (max-width: $desktop-version){
+    .rangement_carte-restaurant{
+        display: flex;
+        flex-wrap: wrap;
+    }
+    .restaurants_carte-restaurant{
+        flex: 40%;
+        &:first-child {
+        margin-right: 30px;
+        }
+        &:nth-child(3){
+            margin-right: 30px;
+        }
+    }
+}
+@media screen and (min-width: $desktop-version){
+    .rangement_carte-restaurant{
+        display: flex;
+        flex-wrap: wrap;
+    }
+    .restaurants_carte-restaurant{
+        flex: 40%;
+        margin: 30px 40px 20px 40px;
     }
 }

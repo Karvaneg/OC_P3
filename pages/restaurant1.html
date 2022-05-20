@@ -1,2 +1,70 @@
-<i class="fa-solid fa-circle-check"></i>
-<i class="fa-solid fa-arrow-left"></i>
+<!DOCTYPE html><!-- Précise le language utilisé -->
+<html lang="fr"><!-- Précise la langue utilisée -->
+    <head>
+        <meta charset="utf-8" /><!-- Précise l'encodage des caractères -->
+        <!-- Indique comment le navigateur doit afficher la page sur différents appareils mobiles -->
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Ohmyfood ! - La palette du goût</title>
+        <link rel="icon" type="image/x-icon" href="../favicon.ico" />
+        <!-- Appel pour les feuilles de style -->
+        <link rel="stylesheet" href="./css/normalize.css" />
+        <link rel="stylesheet" href="../style.css" />
+        <!-- Appel pour les icônes du site -->
+        <script src="https://kit.fontawesome.com/70f41f18b3.js" crossorigin="anonymous"></script> 
+        <!-- Appel pour les polices du site : Roboto & Shrikhand -->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Shrikhand&display=swap" rel="stylesheet">
+    </head>
+    <body>
+        <!--Entête de la page-->
+        <header class="header">
+            <!--Insertion d'un logo cliquable-->
+            <div class="header_retour_accueil">
+               <a href="../index.html"><i class="fa-solid fa-arrow-left"></i></a>
+            </div>
+            <div class="header_logo">
+                <a href="../index.html"><img class="header_logo_image" src="../images/logo/ohmyfood.png" alt="Ohmyfood ! - Réservez le menu qui vous convient !" title="Ohmyfood ! - Réservez le menu qui vous convient !"></a>
+            </div>
+        </header>
+        <!--Corps de la page-->
+        <main>
+            <!-- Partie Restaurants -->
+            <section class="restaurants_page">
+                <img src="../images/restaurants/La-palette-du-gout.jpg" alt="La palette du goût" title="La palette du goût">
+                <div class="restaurants_titre">
+                    <h1>La palette du goût</h1>
+                </div>
+            <i class="fa-solid fa-circle-check"></i>
+            </section>
+            
+            
+                <button>Commander</button>
+            
+            
+            
+        </main>
+        <!--Pied de la page-->
+        <footer class="footer">
+            <div id="footer_titre">
+                <h3 class="footer_titre_font"><a href="../index.html">Ohmyfood</a></h3>
+            </div>
+            <div class="footer_menu">
+                <ul>
+                    <li>
+                        <i class="footer_menu_item1 fa-solid fa-utensils"></i><a href="#">Proposer un restaurant</a>
+                    </li>
+                    <li>
+                        <i class="footer_menu_item2 fa-solid fa-handshake-angle"></i><a href="#">Devenir partenaire</a>
+                    </li>
+                    <li>
+                        <a href="#">Mentions légales</a>
+                    </li>
+                    <li>
+                        <a href="mailto:contact@ohmyfood.com">Contact</a>
+                    </li>
+                </ul>
+            </div>
+        </footer>
+    </body>
+</html>

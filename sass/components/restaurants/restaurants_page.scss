@@ -1,0 +1,8 @@
+.restaurants_page img{
+    width: 100%;
+}
+button{
+    @include bouton_action_format; /* Appel du format "action" du bouton */
+    margin-top: 20px;
+    margin-bottom: 20px;
+}

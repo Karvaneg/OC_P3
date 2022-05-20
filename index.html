@@ -5,6 +5,7 @@
         <!-- Indique comment le navigateur doit afficher la page sur différents appareils mobiles -->
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Ohmyfood ! - Réservez le menu qui vous convient !</title>
+        <link rel="icon" type="image/x-icon" href="favicon.ico" />
         <!-- Appel pour les feuilles de style -->
         <link rel="stylesheet" href="./css/normalize.css" />
         <link rel="stylesheet" href="style.css" />
@@ -17,13 +18,13 @@
     </head>
     <body>
         <!--Entête de la page-->
-        <header>
+        <header class="header">
             <!--Insertion d'un logo cliquable-->
-            <div class="logo">
-                <a href="index.html"><img id="logo" src="./images/logo/ohmyfood.png" alt="Ohmyfood ! - Réservez le menu qui vous convient !" title="Ohmyfood ! - Réservez le menu qui vous convient !"></a>
+            <div class="header_logo">
+                <a href="index.html"><img class="header_logo_image" src="./images/logo/ohmyfood.png" alt="Ohmyfood ! - Réservez le menu qui vous convient !" title="Ohmyfood ! - Réservez le menu qui vous convient !"></a>
             </div>
-            <div id="localisation">
-                <i class="fa-solid fa-location-dot"></i><p id="selection-lieu">Paris, Belleville</p>
+            <div class="header_localisation">
+                <i class="fa-solid fa-location-dot"></i><p class="header_localisation_selection-lieu">Paris, Belleville</p>
             </div>
         </header>
         <!--Corps de la page-->
@@ -64,6 +65,7 @@
                 <div class="restaurants_titre">
                     <h2>Restaurants</h2>
                 </div>
+                <div class="rangement_carte-restaurant">
                 <div class="restaurants_carte-restaurant">
                     <div class="restaurants_carte-restaurant_image">
                         <a href="pages/restaurant1.html"><img src="images/restaurants/La-palette-du-gout.jpg" alt="La palette du goût" title="La palette du goût"></a>
@@ -75,7 +77,7 @@
                             <p>Ménilmontant</p>
                         </div>
                         <div class="restaurants_carte-restaurant_details_coeur">
-                            <i class="fa-regular fa-heart"></i>
+                            <a href="#clique_animation1"><i class="fa-regular fa-heart" id="clique_animation1"></i></a>
                         </div>
                     </div>
                 </div>
@@ -90,7 +92,7 @@
                             <p>Charonne</p>
                         </div>
                         <div class="restaurants_carte-restaurant_details_coeur">
-                            <i class="fa-regular fa-heart"></i>
+                            <a href="#clique_animation2"><i class="fa-regular fa-heart" id="clique_animation2"></i></a>
                         </div>
                     </div>
                 </div>
@@ -104,7 +106,7 @@
                             <p>Cité Rouge</p>
                         </div>
                         <div class="restaurants_carte-restaurant_details_coeur">
-                            <i class="fa-regular fa-heart"></i>
+                            <a href="#clique_animation3"><i class="fa-regular fa-heart" id="clique_animation3"></i></a>
                         </div>
                     </div>
                 </div>
@@ -118,20 +120,12 @@
                             <p>Folie-Méricourt</p>
                         </div>
                         <div class="restaurants_carte-restaurant_details_coeur">
-                            <i class="fa-regular fa-heart"></i>
+                            <a href="#clique_animation4"><i class="fa-regular fa-heart" id="clique_animation4"></i></a>
                         </div>
                     </div>
                 </div>
-
-                <div class="restaurants_restaurant2"></div>
-                <div class="restaurants_restaurant3"></div>
-                <div class="restaurants_restaurant4"></div>
-
-
-                
-                
+            </div>
             </section>
-        
         </main>
         <!--Pied de la page-->
         <footer class="footer">
