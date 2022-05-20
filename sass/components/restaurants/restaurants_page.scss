@@ -1,8 +1,77 @@
-.restaurants_page img{
+.restaurant_page{
+    background: $background-color-main;
+    & img{
     width: 100%;
+    }  
+}
+.restaurant_menu{
+    position: relative;
+    background: $background-color-main;
+    border-radius: 40px 40px 0px 0px;
+    bottom: 72px;
+}
+.header_menu{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    &_titre h1{
+        font-family: $titles-logo-font;
+        margin-left: 20px;
+        margin-top: 20px;
+    }
 }
 button{
     @include bouton_action_format; /* Appel du format "action" du bouton */
     margin-top: 20px;
     margin-bottom: 20px;
 }
+.commander_bouton{
+    text-align: center;
+}
+/*  BOUTONS - checkbox like  */
+
+.checkbox-like-restaurant {
+	position: absolute;
+	right: 53px;
+	bottom: 117px;
+	height: 25px;
+	font-size: 25px;
+	cursor: pointer;
+}
+
+.checkbox-like-restaurant.checkbox-like-restaurant--position {
+	position: initial;
+	margin-top: 20px;
+}
+
+.checkbox-like-restaurant input[type="checkbox"]:checked ~ .unchecked {
+  	display: none;
+}
+
+.checkbox-like-restaurant input[type="checkbox"]:checked ~ .checked {
+  	display: inline-block;
+  	color: rgba(255, 255, 255, 0);
+}
+
+.checkbox-like-restaurant input[type="checkbox"], .checkbox-like-restaurant .checked {
+  	display: none;
+  	animation: like 3s;
+  	animation-fill-mode: forwards;
+    transition: all 0.3s linear 0s;
+}
+
+@keyframes like {
+	0% { 
+      opacity: 0;
+  }
+
+  50% { 
+      background: linear-gradient(to bottom, $primary-color,$secondary-color);
+      -webkit-background-clip: text;
+    }
+	
+	100% { 
+      background: linear-gradient(to bottom, $primary-color,$secondary-color);
+      -webkit-background-clip: text;
+  	}
+  }

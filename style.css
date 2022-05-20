@@ -90,14 +90,17 @@ li {
   padding: 10px;
   color: white;
   background: linear-gradient(356deg, #9356DC 0%, #FF79DA 100%);
-  /*  background: linear-gradient($secondary-color, $primary-color);*/
   box-shadow: 0px 4px 5px 1px rgba(0, 0, 0, 0.12);
+  -webkit-transition: opacity 1s;
+  -o-transition: opacity 1s;
+  transition: opacity 1s;
   /* Appel du format "action" du bouton */
   margin-top: 20px;
 }
 .recherche button:hover {
-  background: linear-gradient(356deg, #ae80e5 0%, #fface8 100%);
+  /* background: linear-gradient(356deg, lighten($primary-color, 10%) 0%, lighten($secondary-color, 10%) 100%);*/
   box-shadow: 0px 4px 5px 0px rgba(0, 0, 0, 0.4);
+  opacity: 0.7;
 }
 
 .fonctionnement {
@@ -202,12 +205,12 @@ ol li:hover i {
   justify-content: space-between;
   align-items: center;
   padding: 182px 20px 15px 13px;
-}
-.restaurants_carte-restaurant_details .fa-heart {
-  font-size: 25px;
-  position: absolute;
-  right: 25px;
-  bottom: 22px;
+  /*  & .fa-heart{
+        font-size: 25px;
+        position: absolute;
+        right: 25px;
+        bottom: 22px;
+    }*/
 }
 .restaurants img {
   object-fit: cover;
@@ -216,6 +219,50 @@ ol li:hover i {
   height: 170px;
 }
 
+/*  BOUTONS - checkbox like  */
+.checkbox-like {
+  position: absolute;
+  right: 20px;
+  bottom: 25px;
+  height: 25px;
+  font-size: 25px;
+  cursor: pointer;
+}
+
+.checkbox-like.checkbox-like--position {
+  position: initial;
+  margin-top: 20px;
+}
+
+.checkbox-like input[type=checkbox]:checked ~ .unchecked {
+  display: none;
+}
+
+.checkbox-like input[type=checkbox]:checked ~ .checked {
+  display: inline-block;
+  color: rgba(255, 255, 255, 0);
+}
+
+.checkbox-like input[type=checkbox], .checkbox-like .checked {
+  display: none;
+  animation: like 3s;
+  animation-fill-mode: forwards;
+  transition: all 0.3s linear 0s;
+}
+
+@keyframes like {
+  0% {
+    opacity: 0;
+  }
+  50% {
+    background: linear-gradient(to bottom, #9356DC, #FF79DA);
+    -webkit-background-clip: text;
+  }
+  100% {
+    background: linear-gradient(to bottom, #9356DC, #FF79DA);
+    -webkit-background-clip: text;
+  }
+}
 @media screen and (min-width: 768px) and (max-width: 992px) {
   .rangement_carte-restaurant {
     display: flex;
@@ -239,12 +286,40 @@ ol li:hover i {
   }
 
   .restaurants_carte-restaurant {
-    flex: 40%;
-    margin: 30px 40px 20px 40px;
+    flex: 3%;
+    margin: 30px 0px 20px 20px;
+  }
+  .restaurants_carte-restaurant:first-child {
+    margin-right: 0px;
+    margin-left: 0px;
+  }
+  .restaurants_carte-restaurant:nth-child(3) {
+    margin-right: 0px;
   }
 }
-.restaurants_page img {
+.restaurant_page {
+  background: #f6f6f6;
+}
+.restaurant_page img {
   width: 100%;
+}
+
+.restaurant_menu {
+  position: relative;
+  background: #f6f6f6;
+  border-radius: 40px 40px 0px 0px;
+  bottom: 72px;
+}
+
+.header_menu {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.header_menu_titre h1 {
+  font-family: Shrikhand, cursive;
+  margin-left: 20px;
+  margin-top: 20px;
 }
 
 button {
@@ -258,17 +333,68 @@ button {
   padding: 10px;
   color: white;
   background: linear-gradient(356deg, #9356DC 0%, #FF79DA 100%);
-  /*  background: linear-gradient($secondary-color, $primary-color);*/
   box-shadow: 0px 4px 5px 1px rgba(0, 0, 0, 0.12);
+  -webkit-transition: opacity 1s;
+  -o-transition: opacity 1s;
+  transition: opacity 1s;
   /* Appel du format "action" du bouton */
   margin-top: 20px;
   margin-bottom: 20px;
 }
 button:hover {
-  background: linear-gradient(356deg, #ae80e5 0%, #fface8 100%);
+  /* background: linear-gradient(356deg, lighten($primary-color, 10%) 0%, lighten($secondary-color, 10%) 100%);*/
   box-shadow: 0px 4px 5px 0px rgba(0, 0, 0, 0.4);
+  opacity: 0.7;
 }
 
+.commander_bouton {
+  text-align: center;
+}
+
+/*  BOUTONS - checkbox like  */
+.checkbox-like-restaurant {
+  position: absolute;
+  right: 53px;
+  bottom: 117px;
+  height: 25px;
+  font-size: 25px;
+  cursor: pointer;
+}
+
+.checkbox-like-restaurant.checkbox-like-restaurant--position {
+  position: initial;
+  margin-top: 20px;
+}
+
+.checkbox-like-restaurant input[type=checkbox]:checked ~ .unchecked {
+  display: none;
+}
+
+.checkbox-like-restaurant input[type=checkbox]:checked ~ .checked {
+  display: inline-block;
+  color: rgba(255, 255, 255, 0);
+}
+
+.checkbox-like-restaurant input[type=checkbox], .checkbox-like-restaurant .checked {
+  display: none;
+  animation: like 3s;
+  animation-fill-mode: forwards;
+  transition: all 0.3s linear 0s;
+}
+
+@keyframes like {
+  0% {
+    opacity: 0;
+  }
+  50% {
+    background: linear-gradient(to bottom, #9356DC, #FF79DA);
+    -webkit-background-clip: text;
+  }
+  100% {
+    background: linear-gradient(to bottom, #9356DC, #FF79DA);
+    -webkit-background-clip: text;
+  }
+}
 .footer {
   padding-top: 20px;
   padding-left: 30px;

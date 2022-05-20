@@ -30,12 +30,12 @@
             justify-content: space-between;
             align-items: center;
             padding: 182px 20px 15px 13px;
-            & .fa-heart{
+          /*  & .fa-heart{
                 font-size: 25px;
                 position: absolute;
                 right: 25px;
                 bottom: 22px;
-            }
+            }*/
         }
     }
     & img{
@@ -45,6 +45,53 @@
         height: 170px;
     }
 }
+/*  BOUTONS - checkbox like  */
+
+.checkbox-like {
+	position: absolute;
+	right: 20px;
+	bottom: 25px;
+	height: 25px;
+	font-size: 25px;
+	cursor: pointer;
+}
+
+.checkbox-like.checkbox-like--position {
+	position: initial;
+	margin-top: 20px;
+}
+
+.checkbox-like input[type="checkbox"]:checked ~ .unchecked {
+  	display: none;
+}
+
+.checkbox-like input[type="checkbox"]:checked ~ .checked {
+  	display: inline-block;
+  	color: rgba(255, 255, 255, 0);
+}
+
+.checkbox-like input[type="checkbox"], .checkbox-like .checked {
+  	display: none;
+  	animation: like 3s;
+  	animation-fill-mode: forwards;
+    transition: all 0.3s linear 0s;
+}
+
+@keyframes like {
+	0% { 
+      opacity: 0;
+  }
+
+  50% { 
+      background: linear-gradient(to bottom, $primary-color,$secondary-color);
+      -webkit-background-clip: text;
+    }
+	
+	100% { 
+      background: linear-gradient(to bottom, $primary-color,$secondary-color);
+      -webkit-background-clip: text;
+  	}
+  }
 @media screen and (min-width: $tablette-version) and (max-width: $desktop-version){
     .rangement_carte-restaurant{
         display: flex;
@@ -66,7 +113,14 @@
         flex-wrap: wrap;
     }
     .restaurants_carte-restaurant{
-        flex: 40%;
-        margin: 30px 40px 20px 40px;
+        flex: 3%;
+        margin: 30px 0px 20px 20px;
+        &:first-child {
+            margin-right: 0px;
+            margin-left: 0px;
+        }
+        &:nth-child(3){
+            margin-right: 0px;
+        }
     }
 }
