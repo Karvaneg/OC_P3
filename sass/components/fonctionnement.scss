@@ -51,3 +51,13 @@ ol {
         }  
         }
     }
+    @media screen and (min-width: $desktop-version){
+        ol{
+            display: flex;
+            justify-content: space-around;
+            & li{
+                padding-right: 40px;
+            }
+        }
+        
+    }
