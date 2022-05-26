@@ -1,29 +1,120 @@
+main .image_restaurant{
+    width: 100%;
+    object-fit: cover;
+}
 .restaurant_page{
     background: $background-color-main;
-    & img{
-    width: 100%;
-    }  
-}
-.restaurant_menu{
+    padding-bottom: 60px;
+    padding-left: 15px;
+    padding-right: 15px;
     position: relative;
     background: $background-color-main;
     border-radius: 40px 40px 0px 0px;
-    bottom: 72px;
+    margin-top: -25%;
 }
 .header_menu{
     display: flex;
-    justify-content: space-between;
-    align-items: center;
+    padding-top: 30px;
+    margin-bottom: -10px;
     &_titre h1{
         font-family: $titles-logo-font;
-        margin-left: 20px;
-        margin-top: 20px;
+    }
+}
+h2{
+    font-weight: normal;
+    font-size: 16px;
+    margin-top: 40px;
+    margin-bottom: 15px;
+    border-bottom: 3px solid $tertiary-color;
+    padding-bottom: 5px;
+    width: 40px;
+}
+h1, h2{
+    margin-left: 5px;
+}
+.valider{
+    display: inline-block;
+    overflow: hidden;
+    /* l'élément n'est pas autorisé à se rétrécir */
+    flex-shrink: 0;
+    font-size: 20px;
+    background-color: #99E2D0;
+    color: white;
+    border-radius: 0px 15px 15px 0px;
+    width: 0px;
+    height: 70px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: width 1s;
+    & .fa-circle-check{
+        transform: rotate(360deg);
+        transition: transform 500ms ease-in-out;
+    }
+}
+.format_plat{
+    cursor: pointer;
+    overflow: hidden;
+    height: 70px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    background-color: white; 
+    border-radius: 15px;
+    padding-left: 12px;
+    margin-bottom: 15px;
+    box-shadow: 1px 4px 9px 1px rgb(0 0 0 / 10%);
+    transition: transform 330ms ease-in-out;
+    &_textes{
+        line-height: 25px;
+        flex-grow: 1;
+        overflow: hidden;
+        /* si nécessaire, texte rogné et ... */
+        text-overflow: ellipsis;
+        /* empêche le retour à la ligne */
+        white-space: nowrap;
+        padding-right: 10px;
+        &_titre{
+            font-weight: bold;
+            font-size: 18px;
+            flex-grow: 1;
+            overflow: hidden;
+            /* si nécessaire, texte rogné et ... */
+            text-overflow: ellipsis;
+            /* empêche le retour à la ligne */
+            white-space: nowrap;
+        }
+        &_precision{
+            font-size: 14px;
+            flex-grow: 1;
+            overflow: hidden;
+            /* si nécessaire, texte rogné et ... */
+            text-overflow: ellipsis;
+            /* empêche le retour à la ligne */
+            white-space: nowrap;
+            }
+    }
+    &_prix{
+        font-weight: bold;
+        padding-right: 20px;
+        margin-top: 31px;
+    }
+    &:hover{
+        transform: scale(105%);
+    }
+    &:hover .valider{
+        width: 60px;
+       & > .fa-circle-check{
+            transform: rotate(0deg);
+        } 
     }
 }
 button{
     @include bouton_action_format; /* Appel du format "action" du bouton */
-    margin-top: 20px;
+    margin-top: 40px;
     margin-bottom: 20px;
+    width: 200px;
 }
 .commander_bouton{
     text-align: center;
@@ -32,8 +123,7 @@ button{
 
 .checkbox-like-restaurant {
 	position: absolute;
-	right: 53px;
-	bottom: 117px;
+	right: 35px;
 	height: 25px;
 	font-size: 25px;
 	cursor: pointer;
@@ -74,4 +164,30 @@ button{
       background: linear-gradient(to bottom, $primary-color,$secondary-color);
       -webkit-background-clip: text;
   	}
+  }
+  @media screen and (min-width: $tablette-version) and (max-width: $desktop-version){
+      .restaurant_page{
+        padding-left: 30px;
+        padding-right: 30px;
+      }
+  }
+  @media screen and (min-width: $desktop-version){
+    main .image_restaurant{
+        object-fit: cover;
+        object-position: 0 -200px;
+    }
+    .restaurant_page{
+        margin-top: -35%;
+    }
+    .header_menu{
+        justify-content: center;
+    }
+    .restaurant_menu{
+        display: flex;
+        justify-content: space-evenly;
+        column-gap: 14px;
+    }
+    .format_plat{
+        width: 320px;
+    }
   }

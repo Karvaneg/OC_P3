@@ -8,6 +8,10 @@
         background: white;
         box-shadow: 0px 4px 5px 1px rgb(0 0 0 / 12%);
         position: relative;
+        transition: transform 330ms ease-in-out;
+        &:hover{
+            transform: scale(102%);
+        }
         &_image a{
             position: absolute;
             width: 100%;
@@ -30,12 +34,18 @@
             justify-content: space-between;
             align-items: center;
             padding: 182px 20px 15px 13px;
-          /*  & .fa-heart{
+
+         /*   & .fa-heart{
                 font-size: 25px;
                 position: absolute;
                 right: 25px;
                 bottom: 22px;
+                background-color: linear-gradient(to bottom, $primary-color,$secondary-color);
+            }
+            & .fa-heart:active{
+                background-size: 100% 100%;
             }*/
+          
         }
     }
     & img{
@@ -45,7 +55,7 @@
         height: 170px;
     }
 }
-/*  BOUTONS - checkbox like  */
+/* BOUTONS - checkbox like  */
 
 .checkbox-like {
 	position: absolute;
@@ -68,28 +78,52 @@
 .checkbox-like input[type="checkbox"]:checked ~ .checked {
   	display: inline-block;
   	color: rgba(255, 255, 255, 0);
+  /*    background: linear-gradient(to bottom, $primary-color,$secondary-color) bottom no-repeat;
+    -webkit-background-clip: text;
+    background-clip: text;*/
+    background-size: 100% 0px;
+  /*  transition: background-size .1s;*/
 }
 
 .checkbox-like input[type="checkbox"], .checkbox-like .checked {
   	display: none;
-  	animation: like 3s;
-  	animation-fill-mode: forwards;
-    transition: all 0.3s linear 0s;
+    background-size: 100% 100%;
+    background: -webkit-linear-gradient(to bottom, $primary-color,$secondary-color) bottom no-repeat;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    transition: background-size .1s;
+  /*  animation: like 3s;*/
+   /* animation-fill-mode: forwards;
+    transition: like .1s;*/
+  /*  transition: all 0.3s ease-in-out 0s;*/
 }
 
 @keyframes like {
-	0% { 
-      opacity: 0;
-  }
+	0% {
+     
+    background-clip: 100% 0px;
+ }
+    /*  opacity: 0;*/
+      
+      
+ 
 
   50% { 
-      background: linear-gradient(to bottom, $primary-color,$secondary-color);
-      -webkit-background-clip: text;
+     /* background: linear-gradient(to bottom, $primary-color,$secondary-color);*/
+    /*  -webkit-background-clip: text;
+      background-clip: text;*/
+background-clip: 50% 50%;
+
     }
 	
 	100% { 
-      background: linear-gradient(to bottom, $primary-color,$secondary-color);
-      -webkit-background-clip: text;
+     /* background: linear-gradient(to bottom, $primary-color,$secondary-color);*/
+   /*  background-clip: text;
+      -webkit-background-clip: text;*/
+      background-clip: 100% 100% ;
+      
+      
+      
   	}
   }
 @media screen and (min-width: $tablette-version) and (max-width: $desktop-version){
@@ -108,6 +142,9 @@
     }
 }
 @media screen and (min-width: $desktop-version){
+    .restaurants{
+        padding-bottom: 5%;
+    }
     .rangement_carte-restaurant{
         display: flex;
         flex-wrap: wrap;

@@ -94,13 +94,15 @@ li {
   -webkit-transition: opacity 1s;
   -o-transition: opacity 1s;
   transition: opacity 1s;
+  transition: transform 330ms ease-in-out;
   /* Appel du format "action" du bouton */
   margin-top: 20px;
 }
 .recherche button:hover {
   /* background: linear-gradient(356deg, lighten($primary-color, 10%) 0%, lighten($secondary-color, 10%) 100%);*/
   box-shadow: 0px 4px 5px 0px rgba(0, 0, 0, 0.4);
-  opacity: 0.7;
+  opacity: 0.6;
+  transform: scale(1.1);
 }
 
 .fonctionnement {
@@ -182,6 +184,10 @@ ol li:hover i {
   background: white;
   box-shadow: 0px 4px 5px 1px rgba(0, 0, 0, 0.12);
   position: relative;
+  transition: transform 330ms ease-in-out;
+}
+.restaurants_carte-restaurant:hover {
+  transform: scale(102%);
 }
 .restaurants_carte-restaurant_image a {
   position: absolute;
@@ -205,12 +211,16 @@ ol li:hover i {
   justify-content: space-between;
   align-items: center;
   padding: 182px 20px 15px 13px;
-  /*  & .fa-heart{
-        font-size: 25px;
-        position: absolute;
-        right: 25px;
-        bottom: 22px;
-    }*/
+  /*   & .fa-heart{
+         font-size: 25px;
+         position: absolute;
+         right: 25px;
+         bottom: 22px;
+         background-color: linear-gradient(to bottom, $primary-color,$secondary-color);
+     }
+     & .fa-heart:active{
+         background-size: 100% 100%;
+     }*/
 }
 .restaurants img {
   object-fit: cover;
@@ -219,7 +229,7 @@ ol li:hover i {
   height: 170px;
 }
 
-/*  BOUTONS - checkbox like  */
+/* BOUTONS - checkbox like  */
 .checkbox-like {
   position: absolute;
   right: 20px;
@@ -241,26 +251,42 @@ ol li:hover i {
 .checkbox-like input[type=checkbox]:checked ~ .checked {
   display: inline-block;
   color: rgba(255, 255, 255, 0);
+  /*    background: linear-gradient(to bottom, $primary-color,$secondary-color) bottom no-repeat;
+    -webkit-background-clip: text;
+    background-clip: text;*/
+  background-size: 100% 0px;
+  /*  transition: background-size .1s;*/
 }
 
 .checkbox-like input[type=checkbox], .checkbox-like .checked {
   display: none;
-  animation: like 3s;
-  animation-fill-mode: forwards;
-  transition: all 0.3s linear 0s;
+  background-size: 100% 100%;
+  background: -webkit-linear-gradient(to bottom, #9356DC, #FF79DA) bottom no-repeat;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  transition: background-size 0.1s;
+  /*  animation: like 3s;*/
+  /* animation-fill-mode: forwards;
+   transition: like .1s;*/
+  /*  transition: all 0.3s ease-in-out 0s;*/
 }
 
 @keyframes like {
   0% {
-    opacity: 0;
+    background-clip: 100% 0px;
   }
+  /*  opacity: 0;*/
   50% {
-    background: linear-gradient(to bottom, #9356DC, #FF79DA);
-    -webkit-background-clip: text;
+    /* background: linear-gradient(to bottom, $primary-color,$secondary-color);*/
+    /*  -webkit-background-clip: text;
+      background-clip: text;*/
+    background-clip: 50% 50%;
   }
   100% {
-    background: linear-gradient(to bottom, #9356DC, #FF79DA);
-    -webkit-background-clip: text;
+    /* background: linear-gradient(to bottom, $primary-color,$secondary-color);*/
+    /*  background-clip: text;
+       -webkit-background-clip: text;*/
+    background-clip: 100% 100%;
   }
 }
 @media screen and (min-width: 768px) and (max-width: 992px) {
@@ -280,6 +306,10 @@ ol li:hover i {
   }
 }
 @media screen and (min-width: 992px) {
+  .restaurants {
+    padding-bottom: 5%;
+  }
+
   .rangement_carte-restaurant {
     display: flex;
     flex-wrap: wrap;
@@ -297,29 +327,123 @@ ol li:hover i {
     margin-right: 0px;
   }
 }
-.restaurant_page {
-  background: #f6f6f6;
-}
-.restaurant_page img {
+main .image_restaurant {
   width: 100%;
+  object-fit: cover;
 }
 
-.restaurant_menu {
+.restaurant_page {
+  background: #f6f6f6;
+  padding-bottom: 60px;
+  padding-left: 15px;
+  padding-right: 15px;
   position: relative;
   background: #f6f6f6;
   border-radius: 40px 40px 0px 0px;
-  bottom: 72px;
+  margin-top: -25%;
 }
 
 .header_menu {
   display: flex;
-  justify-content: space-between;
-  align-items: center;
+  padding-top: 30px;
+  margin-bottom: -10px;
 }
 .header_menu_titre h1 {
   font-family: Shrikhand, cursive;
-  margin-left: 20px;
-  margin-top: 20px;
+}
+
+h2 {
+  font-weight: normal;
+  font-size: 16px;
+  margin-top: 40px;
+  margin-bottom: 15px;
+  border-bottom: 3px solid #99E2D0;
+  padding-bottom: 5px;
+  width: 40px;
+}
+
+h1, h2 {
+  margin-left: 5px;
+}
+
+.valider {
+  display: inline-block;
+  overflow: hidden;
+  /* l'élément n'est pas autorisé à se rétrécir */
+  flex-shrink: 0;
+  font-size: 20px;
+  background-color: #99E2D0;
+  color: white;
+  border-radius: 0px 15px 15px 0px;
+  width: 0px;
+  height: 70px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: width 1s;
+}
+.valider .fa-circle-check {
+  transform: rotate(360deg);
+  transition: transform 500ms ease-in-out;
+}
+
+.format_plat {
+  cursor: pointer;
+  overflow: hidden;
+  height: 70px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  background-color: white;
+  border-radius: 15px;
+  padding-left: 12px;
+  margin-bottom: 15px;
+  box-shadow: 1px 4px 9px 1px rgba(0, 0, 0, 0.1);
+  transition: transform 330ms ease-in-out;
+}
+.format_plat_textes {
+  line-height: 25px;
+  flex-grow: 1;
+  overflow: hidden;
+  /* si nécessaire, texte rogné et ... */
+  text-overflow: ellipsis;
+  /* empêche le retour à la ligne */
+  white-space: nowrap;
+  padding-right: 10px;
+}
+.format_plat_textes_titre {
+  font-weight: bold;
+  font-size: 18px;
+  flex-grow: 1;
+  overflow: hidden;
+  /* si nécessaire, texte rogné et ... */
+  text-overflow: ellipsis;
+  /* empêche le retour à la ligne */
+  white-space: nowrap;
+}
+.format_plat_textes_precision {
+  font-size: 14px;
+  flex-grow: 1;
+  overflow: hidden;
+  /* si nécessaire, texte rogné et ... */
+  text-overflow: ellipsis;
+  /* empêche le retour à la ligne */
+  white-space: nowrap;
+}
+.format_plat_prix {
+  font-weight: bold;
+  padding-right: 20px;
+  margin-top: 31px;
+}
+.format_plat:hover {
+  transform: scale(105%);
+}
+.format_plat:hover .valider {
+  width: 60px;
+}
+.format_plat:hover .valider > .fa-circle-check {
+  transform: rotate(0deg);
 }
 
 button {
@@ -337,14 +461,17 @@ button {
   -webkit-transition: opacity 1s;
   -o-transition: opacity 1s;
   transition: opacity 1s;
+  transition: transform 330ms ease-in-out;
   /* Appel du format "action" du bouton */
-  margin-top: 20px;
+  margin-top: 40px;
   margin-bottom: 20px;
+  width: 200px;
 }
 button:hover {
   /* background: linear-gradient(356deg, lighten($primary-color, 10%) 0%, lighten($secondary-color, 10%) 100%);*/
   box-shadow: 0px 4px 5px 0px rgba(0, 0, 0, 0.4);
-  opacity: 0.7;
+  opacity: 0.6;
+  transform: scale(1.1);
 }
 
 .commander_bouton {
@@ -354,8 +481,7 @@ button:hover {
 /*  BOUTONS - checkbox like  */
 .checkbox-like-restaurant {
   position: absolute;
-  right: 53px;
-  bottom: 117px;
+  right: 35px;
   height: 25px;
   font-size: 25px;
   cursor: pointer;
@@ -393,6 +519,36 @@ button:hover {
   100% {
     background: linear-gradient(to bottom, #9356DC, #FF79DA);
     -webkit-background-clip: text;
+  }
+}
+@media screen and (min-width: 768px) and (max-width: 992px) {
+  .restaurant_page {
+    padding-left: 30px;
+    padding-right: 30px;
+  }
+}
+@media screen and (min-width: 992px) {
+  main .image_restaurant {
+    object-fit: cover;
+    object-position: 0 -200px;
+  }
+
+  .restaurant_page {
+    margin-top: -35%;
+  }
+
+  .header_menu {
+    justify-content: center;
+  }
+
+  .restaurant_menu {
+    display: flex;
+    justify-content: space-evenly;
+    column-gap: 14px;
+  }
+
+  .format_plat {
+    width: 320px;
   }
 }
 .footer {
