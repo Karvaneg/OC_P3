@@ -350,9 +350,10 @@ main .image_restaurant {
 }
 .header_menu_titre h1 {
   font-family: Shrikhand, cursive;
+  margin-left: 5px;
 }
 
-h2 {
+.restaurant_menu h2 {
   font-weight: normal;
   font-size: 16px;
   margin-top: 40px;
@@ -360,9 +361,6 @@ h2 {
   border-bottom: 3px solid #99E2D0;
   padding-bottom: 5px;
   width: 40px;
-}
-
-h1, h2 {
   margin-left: 5px;
 }
 
