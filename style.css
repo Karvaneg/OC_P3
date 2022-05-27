@@ -67,7 +67,7 @@ li {
   padding-left: 20px;
   padding-right: 20px;
   padding-top: 40px;
-  padding-bottom: 60px;
+  padding-bottom: 40px;
 }
 .recherche_titre {
   margin-bottom: 15px;
@@ -503,6 +503,39 @@ button:hover {
     height: 100%;
     background: linear-gradient(to bottom, #9356DC, #FF79DA);
     -webkit-background-clip: text;
+  }
+}
+/* Animation - apparition des plats au chargement de la page */
+.format_plat {
+  animation: fadein 1s;
+}
+
+.entree1, .plat1, .dessert1 {
+  animation-delay: 50ms;
+  animation-fill-mode: forwards;
+  opacity: 0;
+}
+
+.entree2, .plat2, .dessert2 {
+  animation-delay: 150ms;
+  animation-fill-mode: forwards;
+  opacity: 0;
+}
+
+.entree3, .plat3, .dessert3 {
+  animation-delay: 300ms;
+  animation-fill-mode: forwards;
+  opacity: 0;
+}
+
+@keyframes fadein {
+  from {
+    transform: translateY(20px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
   }
 }
 @media screen and (min-width: 768px) and (max-width: 992px) {

@@ -163,6 +163,39 @@ button{
       -webkit-background-clip: text;
   	}
   }
+/* Animation - apparition des plats au chargement de la page */
+.format_plat{
+    animation: fadein 1s;
+}
+.entree1, .plat1, .dessert1{
+    animation-delay: 50ms;
+	animation-fill-mode: forwards;
+	opacity:0;
+}
+.entree2, .plat2, .dessert2{
+    animation-delay: 150ms;
+	animation-fill-mode: forwards;
+	opacity:0;
+}
+.entree3, .plat3, .dessert3{
+    animation-delay: 300ms;
+	animation-fill-mode: forwards;
+	opacity:0;
+}
+@keyframes fadein {
+    from {
+		transform: translateY(20px);
+        opacity:0;
+    }
+    to {
+		transform: translateY(0);
+        opacity:1;
+    }
+}
+
+
+
+
   @media screen and (min-width: $tablette-version) and (max-width: $desktop-version){
       .restaurant_page{
         padding-left: 30px;
