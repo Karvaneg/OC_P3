@@ -10,7 +10,7 @@
         position: relative;
         transition: transform 330ms ease-in-out;
         &:hover{
-            transform: scale(102%);
+            transform: scale(1.05);
         }
         &_image a{
             position: absolute;
@@ -34,18 +34,6 @@
             justify-content: space-between;
             align-items: center;
             padding: 182px 20px 15px 13px;
-
-         /*   & .fa-heart{
-                font-size: 25px;
-                position: absolute;
-                right: 25px;
-                bottom: 22px;
-                background-color: linear-gradient(to bottom, $primary-color,$secondary-color);
-            }
-            & .fa-heart:active{
-                background-size: 100% 100%;
-            }*/
-          
         }
     }
     & img{
@@ -55,75 +43,50 @@
         height: 170px;
     }
 }
-/* BOUTONS - checkbox like  */
-
-.checkbox-like {
+/*  Animation coeur - remplissage dégradé progressif  */
+.animation_coeur {
 	position: absolute;
-	right: 20px;
 	bottom: 25px;
+    right: 16px;
 	height: 25px;
 	font-size: 25px;
 	cursor: pointer;
 }
-
-.checkbox-like.checkbox-like--position {
-	position: initial;
-	margin-top: 20px;
-}
-
-.checkbox-like input[type="checkbox"]:checked ~ .unchecked {
+.animation_coeur input[type="checkbox"]:checked ~ .coeur_non-select {
   	display: none;
 }
 
-.checkbox-like input[type="checkbox"]:checked ~ .checked {
+.animation_coeur input[type="checkbox"]:checked ~ .coeur_select {
   	display: inline-block;
-  	color: rgba(255, 255, 255, 0);
-  /*    background: linear-gradient(to bottom, $primary-color,$secondary-color) bottom no-repeat;
-    -webkit-background-clip: text;
-    background-clip: text;*/
-    background-size: 100% 0px;
-  /*  transition: background-size .1s;*/
+    color: rgba(255, 255, 255, 0);
 }
 
-.checkbox-like input[type="checkbox"], .checkbox-like .checked {
-  	display: none;
-    background-size: 100% 100%;
-    background: -webkit-linear-gradient(to bottom, $primary-color,$secondary-color) bottom no-repeat;
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    transition: background-size .1s;
-  /*  animation: like 3s;*/
-   /* animation-fill-mode: forwards;
-    transition: like .1s;*/
-  /*  transition: all 0.3s ease-in-out 0s;*/
+.animation_coeur input[type="checkbox"], .animation_coeur .coeur_select {
+    display: none;
+  	animation: like 0.5s;
+    animation-fill-mode: forwards;
+    transition: all 0.3s linear 0s;
 }
-
 @keyframes like {
-	0% {
-     
-    background-clip: 100% 0px;
- }
-    /*  opacity: 0;*/
-      
-      
- 
-
-  50% { 
-     /* background: linear-gradient(to bottom, $primary-color,$secondary-color);*/
-    /*  -webkit-background-clip: text;
-      background-clip: text;*/
-background-clip: 50% 50%;
-
+	0% { 
+      height: 0%;
+  }
+  10% {
+    height: 10%;
+}
+  25%{
+        height:25%;
     }
-	
+    50% { 
+      height: 50%;
+    }
+    75%{
+      height:75%;
+  }
 	100% { 
-     /* background: linear-gradient(to bottom, $primary-color,$secondary-color);*/
-   /*  background-clip: text;
-      -webkit-background-clip: text;*/
-      background-clip: 100% 100% ;
-      
-      
-      
+      height: 100%;
+      background: linear-gradient(to bottom, $primary-color,$secondary-color);
+      -webkit-background-clip: text;
   	}
   }
 @media screen and (min-width: $tablette-version) and (max-width: $desktop-version){
@@ -159,5 +122,8 @@ background-clip: 50% 50%;
         &:nth-child(3){
             margin-right: 0px;
         }
+    }
+    .animation_coeur {
+        right: 10px;
     }
 }
