@@ -17,91 +17,84 @@ li{
 }
 
 /*Animation avant chargement page d'accueil*/
+.toto{
+    width: 100%;
+    display: flex;
+    margin: auto;
+    justify-content: center;
+}
 .animation_avant_chargement{
-    top: 315px;
+    top: 300px;
     position: absolute;
     display: flex;
     justify-content: center;
-    column-gap: 40px;
     flex-direction: row;
     width: 100%;
-    background: linear-gradient(356deg, $primary-color 0%, $tertiary-color 50%, $secondary-color 100%) no-repeat bottom transparent;/* couleur de fond a inclure dans la derniere image/gradient de fond */
-    background-size:100% 5px;
-    padding:5px 10px; /* egal ou superieur à la hauteur de la fausse bordure */
     & i{
-    font-family: $titles-logo-font;
-    font-size: 14px;
-    font-weight:lighter;
     padding-left: 2px;
     padding-top: 18px;
     position: relative;
     display: inline-block;
-    margin: 0 4px;
-    width: 20px;
-    height: 60px;
+    margin: 0 11px;
+    width: 13px;
+    height: 38px;
     border-radius: 2px;
-    animation: tilt 5s cubic-bezier(0.955, -0.010, 1.000, 1.000);
+    animation: tilt 4s cubic-bezier(0.955, -0.010, 1.000, 1.000);
     transform-origin: 100% 100%;
         &.primary-color{
             background-color: $primary-color;
             border: solid #512d7d;
             border-width: 0px 1px 1px 0px;
-            color: $secondary-color;
-            
         }
         &.secondary-color{
             background-color: $secondary-color;
             border: solid #b64f99;
             border-width: 0px 1px 1px 0px;
-            color: $tertiary-color;
-            
         }
         &.tertiary-color{
             background-color: $tertiary-color;
             border: solid #609386;
             border-width: 0px 1px 1px 0px;
-            color: $primary-color;
-            
         }
-       /* &::before {
+      /*  &::before {
             content: '';
             position: absolute;
             z-index: -1;
             bottom: 0;
             display: block;
-            width: 20px;
-            height: 20px;
+            width: 16px;
+            height: 5px;
             background: transparent;
-            box-shadow: 0 2px rgba(0,0,0,.3);
-            animation: stretch infinite 5s cubic-bezier(0.955, -0.010, 1.000, 1.000);
+            box-shadow: 0 16px rgba(0,0,0,.3);
+            animation: stretch 5s cubic-bezier(0.955, -0.010, 1.000, 1.000);
             opacity: 0;
             transform-origin: 0% 0%;
           }*/
-          &:nth-child(2), &:nth-child(2)::before {
-                animation-delay: 0.25s;
-           }
-        &:nth-child(3), &:nth-child(3)::before {
+          &:nth-child(2) {
                 animation-delay: .3s;
-            }
-
-        &:nth-child(4), &:nth-child(4)::before {
+           }
+        &:nth-child(3) {
                 animation-delay: .6s;
             }
 
-        &:nth-child(5), &:nth-child(5)::before {
-                animation-delay:0.9s;
+        &:nth-child(4) {
+                animation-delay: .9s;
             }
-        &:nth-child(6), &:nth-child(6)::before {
+
+        &:nth-child(5) {
                 animation-delay: 1.2s;
             }
-        &:nth-child(7), &:nth-child(7)::before {
+        &:nth-child(6) {
                 animation-delay: 1.5s;
             }
-        &:nth-child(8), &:nth-child(8)::before {
+        &:nth-child(7) {
                 animation-delay: 1.8s;
             }
-        &:nth-child(9), &:nth-child(9)::before {
+        &:nth-child(8) {
                 animation-delay: 2.1s;
+            }
+        &:nth-child(9) {
+                animation-delay: 2.4s;
             }
 
         &:last-of-type {
@@ -114,28 +107,33 @@ li{
     }
   }
   @keyframes tilt {
-    10% { transform: rotate(70deg) }
-    60% { transform: rotate(70deg) }
-   70% { transform: rotate( 0deg) }
+    10% { 
+        transform: rotate(70deg);
+     }
+    60% { transform: rotate(70deg);}
+    70% { transform: rotate( 0deg);}
+    
+    
   }
   
  @keyframes tilt-last {
-    10% { transform: rotate(90deg) }
-    60% { transform: rotate(90deg) }
-    70% { transform: rotate( 0deg) }
+    10% { transform: rotate(90deg); }
+    60% { transform: rotate(90deg); }
+    70% { transform: rotate( 0deg); }
+    
   }
   
-  @keyframes stretch {
-    10% { transform: rotate(-70deg); width: 10px; opacity: 1; left: 0px; bottom: -1px; }
-    60% { transform: rotate(-70deg); width: 10px; opacity: 1; }
-    70% { width: 5px; transform: rotate(0deg); opacity: 0; }
+/*  @keyframes stretch {
+    10% { transform: rotate(-70deg); width: 16px; opacity: 1; left: 0px; bottom: -1px; }
+    60% { transform: rotate(-70deg); width: 16px; opacity: 1; }
+    70% { width: 16px; transform: rotate(0deg); opacity: 0; }
   }
   
   @keyframes stretch-last {
-    10% { transform: rotate(-90deg); width: 10px; height: 2px; opacity: .5; left: 3px; bottom: -1px; }
-    60% { transform: rotate(-90deg); width: 10px; height: 2px; opacity: .5; }
-    70% { transform: rotate(0deg); width: 5px; height: 5px;opacity: 0;}
-  }
+    10% { transform: rotate(-90deg); width: 16px; height: 2px; opacity: .5; left: 3px; bottom: -1px; }
+    60% { transform: rotate(-90deg); width: 16px; height: 2px; opacity: .5; }
+    70% { transform: rotate(0deg); width: 16px; height: 2px;opacity: 0;}
+  }*/
 
 
 
@@ -197,7 +195,7 @@ li{
 	  	opacity: 0;
 	}
   
-	50% {
+	70% {
 	  	opacity: 0.1;
 	}
   
