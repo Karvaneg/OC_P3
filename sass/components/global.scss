@@ -26,6 +26,7 @@ li{
 .animation_avant_chargement{
     top: 300px;
     position: absolute;
+    position: fixed;
     display: flex;
     justify-content: center;
     flex-direction: row;
