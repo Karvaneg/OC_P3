@@ -31,6 +31,7 @@ li {
     justify-content: center;
 }*/
 .animation_avant_chargement {
+  z-index: 1;
   position: absolute;
   position: fixed;
   display: flex;
@@ -39,7 +40,7 @@ li {
   flex-direction: row;
   height: 100%;
   width: 100%;
-  animation: disappear 50ms 3s forwards;
+  animation: disappear 50ms 2.7s forwards;
 }
 .animation_avant_chargement i {
   padding-left: 2px;
@@ -52,7 +53,7 @@ li {
   border-radius: 2px;
   -webkit-box-shadow: 2px 2px 5px 2px #D2D2D2;
   box-shadow: 2px 2px 5px 2px #D2D2D2;
-  animation: tilt 2.8s cubic-bezier(0.955, -0.01, 1, 1);
+  animation: tilt 2.6s cubic-bezier(0.955, -0.01, 1, 1);
   animation-fill-mode: forwards;
   transform-origin: 100% 100%;
 }
