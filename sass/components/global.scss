@@ -32,16 +32,18 @@ li{
     flex-direction: row;
     height: 100%;
     width: 100%;
-    animation: disappear 50ms 2.8s forwards;
+    animation: disappear 50ms 3s forwards;
     & i{
     padding-left: 2px;
     padding-top: 18px;
     position: relative;
     display: inline-block;
-    margin: 0 11px;
+    margin: 0 12px;
     width: 13px;
     height: 38px;
     border-radius: 2px;
+    -webkit-box-shadow: 2px 2px 5px 2px #D2D2D2; 
+box-shadow: 2px 2px 5px 2px #D2D2D2;
     animation: tilt 2.8s cubic-bezier(0.955, -0.010, 1.000, 1.000);
     animation-fill-mode: forwards;
     transform-origin: 100% 100%;
