@@ -30,6 +30,7 @@ li{
     justify-content: center;
     flex-direction: row;
     width: 100%;
+    animation: disappear 50ms 3s forwards;
     & i{
     padding-left: 2px;
     padding-top: 18px;
@@ -83,6 +84,12 @@ li{
             animation-delay: 2.4s;
             }
     }
+  }
+  @keyframes disappear {
+      to{
+         transform: scale(0);
+        /* transform: translate(-9999px);*/
+      }
   }
   @keyframes tilt {
     0%{

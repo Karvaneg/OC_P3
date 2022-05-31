@@ -38,6 +38,7 @@ li {
   justify-content: center;
   flex-direction: row;
   width: 100%;
+  animation: disappear 50ms 3s forwards;
 }
 .animation_avant_chargement i {
   padding-left: 2px;
@@ -93,6 +94,12 @@ li {
   animation-delay: 2.4s;
 }
 
+@keyframes disappear {
+  to {
+    transform: scale(0);
+    /* transform: translate(-9999px);*/
+  }
+}
 @keyframes tilt {
   0% {
     opacity: 1;
