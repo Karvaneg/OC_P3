@@ -55,12 +55,10 @@
 .animation_coeur input[type="checkbox"]:checked ~ .coeur_non-select {
   	display: none;
 }
-
 .animation_coeur input[type="checkbox"]:checked ~ .coeur_select {
   	display: inline-block;
     color: rgba(255, 255, 255, 0);
 }
-
 .animation_coeur input[type="checkbox"], .animation_coeur .coeur_select {
     display: none;
   	animation: like 0.5s;
@@ -87,6 +85,7 @@
       height: 100%;
       background: linear-gradient(to bottom, $primary-color,$secondary-color);
       -webkit-background-clip: text;
+      background-clip: text;
   	}
   }
 @media screen and (min-width: $tablette-version) and (max-width: $desktop-version){

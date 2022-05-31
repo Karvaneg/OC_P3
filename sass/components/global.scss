@@ -39,7 +39,8 @@ li{
     width: 13px;
     height: 38px;
     border-radius: 2px;
-    animation: tilt 4s cubic-bezier(0.955, -0.010, 1.000, 1.000);
+    animation: tilt 3s cubic-bezier(0.955, -0.010, 1.000, 1.000);
+    animation-fill-mode: forwards;
     transform-origin: 100% 100%;
         &.primary-color{
             background-color: $primary-color;
@@ -56,134 +57,76 @@ li{
             border: solid #609386;
             border-width: 0px 1px 1px 0px;
         }
-      /*  &::before {
-            content: '';
-            position: absolute;
-            z-index: -1;
-            bottom: 0;
-            display: block;
-            width: 16px;
-            height: 5px;
-            background: transparent;
-            box-shadow: 0 16px rgba(0,0,0,.3);
-            animation: stretch 5s cubic-bezier(0.955, -0.010, 1.000, 1.000);
-            opacity: 0;
-            transform-origin: 0% 0%;
-          }*/
-          &:nth-child(2) {
-                animation-delay: .3s;
+        &:nth-child(2) {
+            animation-delay: .3s;
            }
         &:nth-child(3) {
-                animation-delay: .6s;
+            animation-delay: .6s;
             }
-
         &:nth-child(4) {
-                animation-delay: .9s;
+            animation-delay: .9s;
             }
-
         &:nth-child(5) {
-                animation-delay: 1.2s;
+            animation-delay: 1.2s;
             }
         &:nth-child(6) {
-                animation-delay: 1.5s;
+            animation-delay: 1.5s;
             }
         &:nth-child(7) {
                 animation-delay: 1.8s;
             }
         &:nth-child(8) {
-                animation-delay: 2.1s;
+            animation-delay: 2.1s;
             }
         &:nth-child(9) {
-                animation-delay: 2.4s;
-            }
-
-        &:last-of-type {
             animation-name: tilt-last;
-            }
-
-        &:last-of-type::before {
-            animation-name: stretch-last;
+            animation-delay: 2.4s;
             }
     }
   }
   @keyframes tilt {
+    0%{
+        opacity: 1;
+        visibility: visible;
+        transform: rotate(0deg);
+    }
     10% { 
         transform: rotate(70deg);
      }
-    60% { transform: rotate(70deg);}
-    70% { transform: rotate( 0deg);}
-    
-    
+    60% {
+        transform: rotate(70deg);
+    }
+    70% {
+        transform: rotate( 70deg);
+    }
+    100%{
+        opacity: 0;
+        transform: rotate( 70deg);
+        visibility: hidden;
+    }
   }
   
  @keyframes tilt-last {
-    10% { transform: rotate(90deg); }
-    60% { transform: rotate(90deg); }
-    70% { transform: rotate( 0deg); }
-    
+    0%{
+        opacity: 1;
+        visibility: visible;
+        transform: rotate(0deg);
+    }
+    10% {
+        transform: rotate(90deg);
+    }
+    60% {
+        transform: rotate(90deg);
+    }
+    70% {
+        transform: rotate( 90deg);
+    }
+    100%{
+        opacity: 0;
+        transform: rotate( 90deg);
+        visibility: hidden;
+    }
   }
-  
-/*  @keyframes stretch {
-    10% { transform: rotate(-70deg); width: 16px; opacity: 1; left: 0px; bottom: -1px; }
-    60% { transform: rotate(-70deg); width: 16px; opacity: 1; }
-    70% { width: 16px; transform: rotate(0deg); opacity: 0; }
-  }
-  
-  @keyframes stretch-last {
-    10% { transform: rotate(-90deg); width: 16px; height: 2px; opacity: .5; left: 3px; bottom: -1px; }
-    60% { transform: rotate(-90deg); width: 16px; height: 2px; opacity: .5; }
-    70% { transform: rotate(0deg); width: 16px; height: 2px;opacity: 0;}
-  }*/
-
-
-
-
-/*.domino:nth-child(n){animation-delay:.25s;  z-index:14 }
-  .domino:nth-child(n+1){animation-delay:0.50s; z-index:13 }
-  .domino:nth-child(n+2){animation-delay:0.75s; z-index:12 }
-  .domino:nth-child(n+3){animation-delay:1s; z-index:11}
-  .domino:nth-child(n+4){animation-delay:1.25s; z-index:10 }
-  .domino:nth-child(n+5){animation-delay:1.50s; z-index:9 }
-  .domino:nth-child(n+6){animation-delay:1.75s; z-index:8}
-  .domino:nth-child(n+7){animation-delay:2.00s; z-index:7 }
-  .domino:nth-child(n+8){animation-delay:2.25s; z-index:6 }
-  .domino:nth-child(n+9){animation-delay:2.50s; z-index:5}
-  .domino:nth-child(n+10){animation-delay:2.75s; z-index:4 }
-  .domino:nth-child(n+11){animation-delay:3s; z-index:3 }
-.domino{
-    width: 20px;
-    height: 60px;
-    border-radius: 5px;
-    animation-name: domino;
-    animation-duration: 3000ms;
-	-webkit-animation-duration: 3000ms;
-	animation-timing-function: ease-in-out;
-	-webkit-animation-timing-function: ease-in-out;
-    animation-fill-mode: forwards;
-	-webkit-animation-fill-mode: forwards;
-    &.primary-color{
-        background-color: $primary-color;
-    }
-    &.secondary-color{
-        background-color: $secondary-color;
-    }
-    &.tertiary-color{
-        background-color: $tertiary-color;
-    }
-}
-
-@keyframes domino {
-	0% {
-		transform: rotate(0deg);
-	  	-webkit-transform: rotate(0deg);
-	  	overflow: hidden;
-	}
-	100% {
-		transform: rotate(75deg);
-	  	-webkit-transform: rotate(75deg);
-	    visibility: hidden;
-	}
-}*/
 /*Page blanche pendant 5s avant le chargement de la page d'accueil*/
 
 .commencer_chargement {

@@ -48,22 +48,9 @@ li {
   width: 13px;
   height: 38px;
   border-radius: 2px;
-  animation: tilt 4s cubic-bezier(0.955, -0.01, 1, 1);
+  animation: tilt 3s cubic-bezier(0.955, -0.01, 1, 1);
+  animation-fill-mode: forwards;
   transform-origin: 100% 100%;
-  /*  &::before {
-        content: '';
-        position: absolute;
-        z-index: -1;
-        bottom: 0;
-        display: block;
-        width: 16px;
-        height: 5px;
-        background: transparent;
-        box-shadow: 0 16px rgba(0,0,0,.3);
-        animation: stretch 5s cubic-bezier(0.955, -0.010, 1.000, 1.000);
-        opacity: 0;
-        transform-origin: 0% 0%;
-      }*/
 }
 .animation_avant_chargement i.primary-color {
   background-color: #9356DC;
@@ -102,16 +89,16 @@ li {
   animation-delay: 2.1s;
 }
 .animation_avant_chargement i:nth-child(9) {
-  animation-delay: 2.4s;
-}
-.animation_avant_chargement i:last-of-type {
   animation-name: tilt-last;
-}
-.animation_avant_chargement i:last-of-type::before {
-  animation-name: stretch-last;
+  animation-delay: 2.4s;
 }
 
 @keyframes tilt {
+  0% {
+    opacity: 1;
+    visibility: visible;
+    transform: rotate(0deg);
+  }
   10% {
     transform: rotate(70deg);
   }
@@ -119,10 +106,20 @@ li {
     transform: rotate(70deg);
   }
   70% {
-    transform: rotate(0deg);
+    transform: rotate(70deg);
+  }
+  100% {
+    opacity: 0;
+    transform: rotate(70deg);
+    visibility: hidden;
   }
 }
 @keyframes tilt-last {
+  0% {
+    opacity: 1;
+    visibility: visible;
+    transform: rotate(0deg);
+  }
   10% {
     transform: rotate(90deg);
   }
@@ -130,66 +127,14 @@ li {
     transform: rotate(90deg);
   }
   70% {
-    transform: rotate(0deg);
+    transform: rotate(90deg);
+  }
+  100% {
+    opacity: 0;
+    transform: rotate(90deg);
+    visibility: hidden;
   }
 }
-/*  @keyframes stretch {
-    10% { transform: rotate(-70deg); width: 16px; opacity: 1; left: 0px; bottom: -1px; }
-    60% { transform: rotate(-70deg); width: 16px; opacity: 1; }
-    70% { width: 16px; transform: rotate(0deg); opacity: 0; }
-  }
-
-  @keyframes stretch-last {
-    10% { transform: rotate(-90deg); width: 16px; height: 2px; opacity: .5; left: 3px; bottom: -1px; }
-    60% { transform: rotate(-90deg); width: 16px; height: 2px; opacity: .5; }
-    70% { transform: rotate(0deg); width: 16px; height: 2px;opacity: 0;}
-  }*/
-/*.domino:nth-child(n){animation-delay:.25s;  z-index:14 }
-  .domino:nth-child(n+1){animation-delay:0.50s; z-index:13 }
-  .domino:nth-child(n+2){animation-delay:0.75s; z-index:12 }
-  .domino:nth-child(n+3){animation-delay:1s; z-index:11}
-  .domino:nth-child(n+4){animation-delay:1.25s; z-index:10 }
-  .domino:nth-child(n+5){animation-delay:1.50s; z-index:9 }
-  .domino:nth-child(n+6){animation-delay:1.75s; z-index:8}
-  .domino:nth-child(n+7){animation-delay:2.00s; z-index:7 }
-  .domino:nth-child(n+8){animation-delay:2.25s; z-index:6 }
-  .domino:nth-child(n+9){animation-delay:2.50s; z-index:5}
-  .domino:nth-child(n+10){animation-delay:2.75s; z-index:4 }
-  .domino:nth-child(n+11){animation-delay:3s; z-index:3 }
-.domino{
-    width: 20px;
-    height: 60px;
-    border-radius: 5px;
-    animation-name: domino;
-    animation-duration: 3000ms;
-	-webkit-animation-duration: 3000ms;
-	animation-timing-function: ease-in-out;
-	-webkit-animation-timing-function: ease-in-out;
-    animation-fill-mode: forwards;
-	-webkit-animation-fill-mode: forwards;
-    &.primary-color{
-        background-color: $primary-color;
-    }
-    &.secondary-color{
-        background-color: $secondary-color;
-    }
-    &.tertiary-color{
-        background-color: $tertiary-color;
-    }
-}
-
-@keyframes domino {
-	0% {
-		transform: rotate(0deg);
-	  	-webkit-transform: rotate(0deg);
-	  	overflow: hidden;
-	}
-	100% {
-		transform: rotate(75deg);
-	  	-webkit-transform: rotate(75deg);
-	    visibility: hidden;
-	}
-}*/
 /*Page blanche pendant 5s avant le chargement de la page d'accueil*/
 .commencer_chargement {
   animation: page_blanche 5s;
@@ -448,6 +393,7 @@ ol li:hover i {
     height: 100%;
     background: linear-gradient(to bottom, #9356DC, #FF79DA);
     -webkit-background-clip: text;
+    background-clip: text;
   }
 }
 @media screen and (min-width: 768px) and (max-width: 992px) {
@@ -546,7 +492,7 @@ main .image_restaurant {
   transition: width 1s;
 }
 .valider .fa-circle-check {
-  transform: rotate(360deg);
+  transform: rotate(0deg);
   transition: transform 500ms ease-in-out;
 }
 
@@ -599,14 +545,11 @@ main .image_restaurant {
   padding-right: 20px;
   margin-top: 31px;
 }
-.format_plat:hover {
-  transform: scale(1.05);
-}
 .format_plat:hover .valider {
   width: 60px;
 }
 .format_plat:hover .valider > .fa-circle-check {
-  transform: rotate(0deg);
+  transform: rotate(360deg);
 }
 
 button {
@@ -686,6 +629,7 @@ button:hover {
     height: 100%;
     background: linear-gradient(to bottom, #9356DC, #FF79DA);
     -webkit-background-clip: text;
+    background-clip: text;
   }
 }
 /* Animation - apparition des plats au chargement de la page */
