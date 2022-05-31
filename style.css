@@ -24,20 +24,20 @@ li {
 }
 
 /*Animation avant chargement page d'accueil*/
-.toto {
-  width: 100%;
-  display: flex;
-  margin: auto;
-  justify-content: center;
-}
-
+/*.toto{
+    width: 100%;
+    display: flex;
+    margin: auto;
+    justify-content: center;
+}*/
 .animation_avant_chargement {
-  top: 300px;
   position: absolute;
   position: fixed;
   display: flex;
   justify-content: center;
+  align-items: center;
   flex-direction: row;
+  height: 100%;
   width: 100%;
   animation: disappear 50ms 3s forwards;
 }
