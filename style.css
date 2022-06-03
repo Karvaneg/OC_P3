@@ -23,13 +23,8 @@ li {
   list-style-type: none;
 }
 
-/*Animation avant chargement page d'accueil*/
-/*.toto{
-    width: 100%;
-    display: flex;
-    margin: auto;
-    justify-content: center;
-}*/
+/*Animation dominos au chargement de la page d'accueil*/
+/*Animation des dominos*/
 .animation_avant_chargement {
   z-index: 1;
   position: absolute;
@@ -40,7 +35,7 @@ li {
   flex-direction: row;
   height: 100%;
   width: 100%;
-  animation: disappear 50ms 2.7s forwards;
+  animation: disappear 50ms 2.6s forwards;
 }
 .animation_avant_chargement i {
   padding-left: 2px;
@@ -98,12 +93,6 @@ li {
   animation-delay: 2.4s;
 }
 
-@keyframes disappear {
-  to {
-    transform: scale(0);
-    transform: translate(-9999px);
-  }
-}
 @keyframes tilt {
   0% {
     opacity: 1;
@@ -146,6 +135,16 @@ li {
     visibility: hidden;
   }
 }
+@keyframes disappear {
+  from {
+    transform: scale(1);
+    transform: translate(0);
+  }
+  to {
+    transform: scale(0);
+    transform: translate(-9999px);
+  }
+}
 /*Page blanche pendant 3s avant le chargement de la page d'accueil*/
 .commencer_chargement {
   animation: page_blanche 3s;
@@ -159,6 +158,92 @@ li {
     opacity: 0.1;
   }
   100% {
+    opacity: 1;
+  }
+}
+/*  Animation coeur - Like - remplissage dégradé progressif  */
+.animation_coeur {
+  position: absolute;
+  height: 25px;
+  font-size: 25px;
+  cursor: pointer;
+}
+
+.animation_coeur input[type=checkbox]:checked ~ .coeur_non-select {
+  display: none;
+}
+
+.animation_coeur input[type=checkbox]:checked ~ .coeur_select {
+  display: inline-block;
+  color: rgba(255, 255, 255, 0);
+}
+
+.animation_coeur input[type=checkbox], .animation_coeur .coeur_select {
+  display: none;
+  animation: like 0.5s;
+  animation-fill-mode: forwards;
+  transition: all 0.3s linear 0s;
+}
+
+@keyframes like {
+  0% {
+    height: 0%;
+  }
+  10% {
+    height: 10%;
+  }
+  25% {
+    height: 25%;
+  }
+  50% {
+    height: 50%;
+  }
+  75% {
+    height: 75%;
+  }
+  100% {
+    height: 100%;
+    background: linear-gradient(to bottom, #9356DC, #FF79DA);
+    -webkit-background-clip: text;
+    background-clip: text;
+  }
+}
+/* Animation - apparition des plats au chargement de la page */
+.format_plat {
+  animation: fadein 1s;
+}
+
+.entree1, .plat1, .dessert1 {
+  animation-delay: 50ms;
+  animation-fill-mode: forwards;
+  opacity: 0;
+}
+
+.entree2, .plat2, .dessert2 {
+  animation-delay: 150ms;
+  animation-fill-mode: forwards;
+  opacity: 0;
+}
+
+.entree3, .plat3, .dessert3 {
+  animation-delay: 300ms;
+  animation-fill-mode: forwards;
+  opacity: 0;
+}
+
+.entree4, .plat4, .dessert4 {
+  animation-delay: 450ms;
+  animation-fill-mode: forwards;
+  opacity: 0;
+}
+
+@keyframes fadein {
+  from {
+    transform: translateY(20px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
     opacity: 1;
   }
 }
@@ -358,55 +443,11 @@ ol li:hover i {
   height: 170px;
 }
 
-/*  Animation coeur - remplissage dégradé progressif  */
-.animation_coeur {
-  position: absolute;
+.animation_coeur_page-accueil {
   bottom: 25px;
   right: 16px;
-  height: 25px;
-  font-size: 25px;
-  cursor: pointer;
 }
 
-.animation_coeur input[type=checkbox]:checked ~ .coeur_non-select {
-  display: none;
-}
-
-.animation_coeur input[type=checkbox]:checked ~ .coeur_select {
-  display: inline-block;
-  color: rgba(255, 255, 255, 0);
-}
-
-.animation_coeur input[type=checkbox], .animation_coeur .coeur_select {
-  display: none;
-  animation: like 0.5s;
-  animation-fill-mode: forwards;
-  transition: all 0.3s linear 0s;
-}
-
-@keyframes like {
-  0% {
-    height: 0%;
-  }
-  10% {
-    height: 10%;
-  }
-  25% {
-    height: 25%;
-  }
-  50% {
-    height: 50%;
-  }
-  75% {
-    height: 75%;
-  }
-  100% {
-    height: 100%;
-    background: linear-gradient(to bottom, #9356DC, #FF79DA);
-    -webkit-background-clip: text;
-    background-clip: text;
-  }
-}
 @media screen and (min-width: 768px) and (max-width: 992px) {
   .rangement_carte-restaurant {
     display: flex;
@@ -445,7 +486,7 @@ ol li:hover i {
     margin-right: 0px;
   }
 
-  .animation_coeur {
+  .animation_coeur_page-accueil {
     right: 10px;
   }
 }
@@ -454,15 +495,22 @@ main .image_restaurant {
   object-fit: cover;
 }
 
+#image_restaurant2 {
+  object-position: 0 -100px;
+}
+
 .restaurant_page {
   background: #f6f6f6;
   padding-bottom: 60px;
   padding-left: 15px;
   padding-right: 15px;
   position: relative;
-  background: #f6f6f6;
   border-radius: 40px 40px 0px 0px;
-  margin-top: -25%;
+  margin-top: -14%;
+}
+
+.restaurant_page_restaurant2 {
+  margin-top: -68%;
 }
 
 .header_menu {
@@ -473,6 +521,9 @@ main .image_restaurant {
 .header_menu_titre h1 {
   font-family: Shrikhand, cursive;
   margin-left: 5px;
+}
+.header_menu_coeur .animation_coeur_pages-resto {
+  right: 35px;
 }
 
 .restaurant_menu h2 {
@@ -595,91 +646,14 @@ button:hover {
   text-align: center;
 }
 
-/*  Animation coeur - remplissage dégradé progressif  */
-.checkbox-like-restaurant {
-  position: absolute;
-  right: 35px;
-  height: 25px;
-  font-size: 25px;
-  cursor: pointer;
-}
-
-.checkbox-like-restaurant input[type=checkbox]:checked ~ .unchecked {
-  display: none;
-}
-
-.checkbox-like-restaurant input[type=checkbox]:checked ~ .checked {
-  display: inline-block;
-  color: rgba(255, 255, 255, 0);
-}
-
-.checkbox-like-restaurant input[type=checkbox], .checkbox-like-restaurant .checked {
-  display: none;
-  animation: like 0.5s;
-  animation-fill-mode: forwards;
-  transition: all 0.3s linear 0s;
-}
-
-@keyframes like {
-  0% {
-    height: 0%;
-  }
-  10% {
-    height: 10%;
-  }
-  25% {
-    height: 25%;
-  }
-  50% {
-    height: 50%;
-  }
-  75% {
-    height: 75%;
-  }
-  100% {
-    height: 100%;
-    background: linear-gradient(to bottom, #9356DC, #FF79DA);
-    -webkit-background-clip: text;
-    background-clip: text;
-  }
-}
-/* Animation - apparition des plats au chargement de la page */
-.format_plat {
-  animation: fadein 1s;
-}
-
-.entree1, .plat1, .dessert1 {
-  animation-delay: 50ms;
-  animation-fill-mode: forwards;
-  opacity: 0;
-}
-
-.entree2, .plat2, .dessert2 {
-  animation-delay: 150ms;
-  animation-fill-mode: forwards;
-  opacity: 0;
-}
-
-.entree3, .plat3, .dessert3 {
-  animation-delay: 300ms;
-  animation-fill-mode: forwards;
-  opacity: 0;
-}
-
-@keyframes fadein {
-  from {
-    transform: translateY(20px);
-    opacity: 0;
-  }
-  to {
-    transform: translateY(0);
-    opacity: 1;
-  }
-}
 @media screen and (min-width: 768px) and (max-width: 992px) {
   .restaurant_page {
     padding-left: 30px;
     padding-right: 30px;
+  }
+
+  .restaurant_page_restaurant2 {
+    margin-top: -73%;
   }
 }
 @media screen and (min-width: 992px) {
@@ -688,8 +662,23 @@ button:hover {
     object-position: 0 -200px;
   }
 
+  #image_restaurant2 {
+    object-fit: cover;
+    max-width: 100%;
+    max-height: 600px;
+    /*648px*/
+    object-position: 0 -289px;
+    /* object-position: 290px 0px;
+     transform: rotate(-90deg);
+     margin-top: -127px;*/
+  }
+
   .restaurant_page {
     margin-top: -35%;
+  }
+
+  .restaurant_page_restaurant2 {
+    margin-top: -13%;
   }
 
   .header_menu {

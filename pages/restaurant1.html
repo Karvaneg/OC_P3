@@ -7,7 +7,6 @@
         <title>Ohmyfood ! - La palette du goût</title>
         <link rel="icon" type="image/x-icon" href="../favicon.ico" />
         <!-- Appel pour les feuilles de style -->
-        <link rel="stylesheet" href="./css/normalize.css" />
         <link rel="stylesheet" href="../style.css" />
         <!-- Appel pour les icônes du site -->
         <script src="https://kit.fontawesome.com/70f41f18b3.js" crossorigin="anonymous"></script> 
@@ -19,10 +18,10 @@
     <body>
         <!--Entête de la page-->
         <header class="header">
-            <!--Insertion d'un logo cliquable-->
             <div class="header_retour_accueil">
                <a href="../index.html"><i class="fa-solid fa-arrow-left"></i></a>
             </div>
+            <!--Insertion d'un logo cliquable-->
             <div class="header_logo">
                 <a href="../index.html"><img class="header_logo_image" src="../images/logo/ohmyfood.png" alt="Ohmyfood ! - Réservez le menu qui vous convient !" title="Ohmyfood ! - Réservez le menu qui vous convient !"></a>
             </div>
@@ -32,16 +31,15 @@
             <img class="image_restaurant" src="../images/restaurants/La-palette-du-gout.jpg" alt="La palette du goût" title="La palette du goût">
             <!-- Partie Restaurant -->
             <section class="restaurant_page">
-                
                     <div class="header_menu">
                         <div class="header_menu_titre">
                             <h1>La palette du goût</h1>
                         </div>
                         <div class="header_menu_coeur">
-                            <label class="checkbox-like-restaurant">
+                            <label class="animation_coeur animation_coeur_pages-resto">
                                 <input type="checkbox"/>
-                                <span class="far fa-heart unchecked"></span>
-                                <span class="fas fa-heart checked"></span>
+                                <span class="far fa-heart coeur_non-select"></span>
+                                <span class="fas fa-heart coeur_select"></span>
                             </label>
                         </div>
                     </div>

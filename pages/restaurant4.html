@@ -1,0 +1,157 @@
+<!DOCTYPE html><!-- Précise le language utilisé -->
+<html lang="fr"><!-- Précise la langue utilisée -->
+    <head>
+        <meta charset="utf-8" /><!-- Précise l'encodage des caractères -->
+        <!-- Indique comment le navigateur doit afficher la page sur différents appareils mobiles -->
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Ohmyfood ! - Le délice des sens</title>
+        <link rel="icon" type="image/x-icon" href="../favicon.ico" />
+        <!-- Appel pour les feuilles de style -->
+        <link rel="stylesheet" href="../style.css" />
+        <!-- Appel pour les icônes du site -->
+        <script src="https://kit.fontawesome.com/70f41f18b3.js" crossorigin="anonymous"></script> 
+        <!-- Appel pour les polices du site : Roboto & Shrikhand -->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Shrikhand&display=swap" rel="stylesheet">
+    </head>
+    <body>
+        <!--Entête de la page-->
+        <header class="header">
+            <div class="header_retour_accueil">
+               <a href="../index.html"><i class="fa-solid fa-arrow-left"></i></a>
+            </div>
+            <!--Insertion d'un logo cliquable-->
+            <div class="header_logo">
+                <a href="../index.html"><img class="header_logo_image" src="../images/logo/ohmyfood.png" alt="Ohmyfood ! - Réservez le menu qui vous convient !" title="Ohmyfood ! - Réservez le menu qui vous convient !"></a>
+            </div>
+        </header>
+        <!--Corps de la page-->
+        <main>
+            <img class="image_restaurant" src="../images/restaurants/Le-delice-des-sens.jpg" alt="Le délice des sens" title="Le délice des sens">
+            <!-- Partie Restaurant -->
+            <section class="restaurant_page">
+                    <div class="header_menu">
+                        <div class="header_menu_titre">
+                            <h1>Le délice des sens</h1>
+                        </div>
+                        <div class="header_menu_coeur">
+                            <label class="animation_coeur animation_coeur_pages-resto">
+                                <input type="checkbox"/>
+                                <span class="far fa-heart coeur_non-select"></span>
+                                <span class="fas fa-heart coeur_select"></span>
+                            </label>
+                        </div>
+                    </div>
+                <div class="restaurant_menu">    
+                    <article class="restaurant_menu_entrees">
+                        <h2>ENTR&Eacute;ES</h2>
+                        <div class="entree1 format_plat">
+                            <div class="entree1_textes format_plat_textes">
+                                <div class="entree1_textes_titre format_plat_textes_titre">Tartare de thon</div>
+                                <div class="entree1_textes_precision format_plat_textes_precision">Assaisonné au yuzu</div>
+                            </div>
+                            <div class="entree1_prix format_plat_prix">25€</div>
+                            <div class="valider"><i class="fa-solid fa-circle-check"></i></div>
+                        </div>
+                        <div class="entree2 format_plat">
+                            <div class="entree2_textes format_plat_textes">
+                                <div class="entree2_textes_titre format_plat_textes_titre">Bouchée de homard croustillant</div>
+                                <div class="entree2_textes_precision format_plat_textes_precision">Et sa farandole de petits légumes</div>
+                            </div>
+                            <div class="entree2_prix format_plat_prix">35€</div>
+                            <div class="valider"><i class="fa-solid fa-circle-check"></i></div>
+                        </div>
+                        <div class="entree3 format_plat">
+                            <div class="entree3_textes format_plat_textes">
+                                <div class="entree3_textes_titre format_plat_textes_titre">Velouté de cèpes</div>
+                                <div class="entree3_textes_precision format_plat_textes_precision">Aux truffes</div>
+                            </div>
+                            <div class="entree3_prix format_plat_prix">20€</div>
+                            <div class="valider"><i class="fa-solid fa-circle-check"></i></div>
+                        </div>
+                    </article>
+                    <article class="restaurant_menu_plats">
+                        <h2>PLATS</h2>
+                        <div class="plat1 format_plat">
+                            <div class="plat1_textes format_plat_textes">
+                                <div class="plat1_textes_titre format_plat_textes_titre">Poulet rôti aux herbes de Provence</div>
+                                <div class="plat1_textes_precision format_plat_textes_precision">Et sa crème de truffe</div>
+                            </div>
+                            <div class="plat1_prix format_plat_prix">40€</div>
+                            <div class="valider"><i class="fa-solid fa-circle-check"></i></div>
+                        </div>
+                        <div class="plat2 format_plat">
+                            <div class="plat2_textes format_plat_textes">
+                                <div class="plat2_textes_titre format_plat_textes_titre">Langouste rôtie</div>
+                                <div class="plat2_textes_precision format_plat_textes_precision">Et ses légumes de saison</div>
+                            </div>
+                            <div class="plat2_prix format_plat_prix">35€</div>
+                            <div class="valider"><i class="fa-solid fa-circle-check"></i></div>
+                        </div>
+                        <div class="plat3 format_plat">
+                            <div class="plat3_textes format_plat_textes">
+                                <div class="plat3_textes_titre format_plat_textes_titre">Côte de boeuf Angus</div>
+                                <div class="plat3_textes_precision format_plat_textes_precision">Et sa purée de panais</div>
+                            </div>
+                            <div class="plat3_prix format_plat_prix">44€</div>
+                            <div class="valider"><i class="fa-solid fa-circle-check"></i></div>
+                        </div>
+                    </article>
+                    <article class="restaurant_menu_desserts">
+                        <h2>DESSERTS</h2>
+                        <div class="dessert1 format_plat">
+                            <div class="dessert1_textes format_plat_textes">
+                                <div class="dessert1_textes_titre format_plat_textes_titre">Farandole de desserts</div>
+                                <div class="dessert1_textes_precision format_plat_textes_precision">Du chef</div>
+                            </div>
+                            <div class="dessert1_prix format_plat_prix">18€</div>
+                            <div class="valider"><i class="fa-solid fa-circle-check"></i></div>
+                        </div>
+                        <div class="dessert2 format_plat">
+                            <div class="dessert2_textes format_plat_textes">
+                                <div class="dessert2_textes_titre format_plat_textes_titre">Crème brulée</div>
+                                <div class="dessert2_textes_precision format_plat_textes_precision">Revisitée</div>
+                            </div>
+                            <div class="dessert2_prix format_plat_prix">22€</div>
+                            <div class="valider"><i class="fa-solid fa-circle-check"></i></div>
+                        </div>
+                        <div class="dessert3 format_plat">
+                            <div class="dessert3_textes format_plat_textes">
+                                <div class="dessert3_textes_titre format_plat_textes_titre">Tiramisu</div>
+                                <div class="dessert3_textes_precision format_plat_textes_precision">À la noisette</div>
+                            </div>
+                            <div class="dessert3_prix format_plat_prix">23€</div>
+                            <div class="valider"><i class="fa-solid fa-circle-check"></i></div>
+                        </div>
+                    </article>
+                </div>
+                <div class="commander_bouton">
+                    <button>Commander</button>
+                </div>   
+            </section> 
+        </main>
+        <!--Pied de la page-->
+        <footer class="footer">
+            <div id="footer_titre">
+                <h3 class="footer_titre_font"><a href="../index.html">Ohmyfood</a></h3>
+            </div>
+            <div class="footer_menu">
+                <ul>
+                    <li>
+                        <i class="footer_menu_item1 fa-solid fa-utensils"></i><a href="#">Proposer un restaurant</a>
+                    </li>
+                    <li>
+                        <i class="footer_menu_item2 fa-solid fa-handshake-angle"></i><a href="#">Devenir partenaire</a>
+                    </li>
+                    <li>
+                        <a href="#">Mentions légales</a>
+                    </li>
+                    <li>
+                        <a href="mailto:contact@ohmyfood.com">Contact</a>
+                    </li>
+                </ul>
+            </div>
+        </footer>
+    </body>
+</html>

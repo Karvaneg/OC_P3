@@ -43,51 +43,10 @@
         height: 170px;
     }
 }
-/*  Animation coeur - remplissage dégradé progressif  */
-.animation_coeur {
-	position: absolute;
+.animation_coeur_page-accueil {
 	bottom: 25px;
     right: 16px;
-	height: 25px;
-	font-size: 25px;
-	cursor: pointer;
 }
-.animation_coeur input[type="checkbox"]:checked ~ .coeur_non-select {
-  	display: none;
-}
-.animation_coeur input[type="checkbox"]:checked ~ .coeur_select {
-  	display: inline-block;
-    color: rgba(255, 255, 255, 0);
-}
-.animation_coeur input[type="checkbox"], .animation_coeur .coeur_select {
-    display: none;
-  	animation: like 0.5s;
-    animation-fill-mode: forwards;
-    transition: all 0.3s linear 0s;
-}
-@keyframes like {
-	0% { 
-      height: 0%;
-  }
-  10% {
-    height: 10%;
-}
-  25%{
-        height:25%;
-    }
-    50% { 
-      height: 50%;
-    }
-    75%{
-      height:75%;
-  }
-	100% { 
-      height: 100%;
-      background: linear-gradient(to bottom, $primary-color,$secondary-color);
-      -webkit-background-clip: text;
-      background-clip: text;
-  	}
-  }
 @media screen and (min-width: $tablette-version) and (max-width: $desktop-version){
     .rangement_carte-restaurant{
         display: flex;
@@ -122,7 +81,7 @@
             margin-right: 0px;
         }
     }
-    .animation_coeur {
+    .animation_coeur_page-accueil {
         right: 10px;
     }
 }

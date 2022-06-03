@@ -2,15 +2,20 @@ main .image_restaurant{
     width: 100%;
     object-fit: cover;
 }
+#image_restaurant2{
+        object-position: 0 -100px;
+    }
 .restaurant_page{
     background: $background-color-main;
     padding-bottom: 60px;
     padding-left: 15px;
     padding-right: 15px;
     position: relative;
-    background: $background-color-main;
     border-radius: 40px 40px 0px 0px;
-    margin-top: -25%;
+    margin-top: -14%;
+}
+.restaurant_page_restaurant2{
+    margin-top: -68%;
 }
 .header_menu{
     display: flex;
@@ -19,6 +24,9 @@ main .image_restaurant{
     &_titre h1{
         font-family: $titles-logo-font;
         margin-left: 5px;
+    }
+    &_coeur .animation_coeur_pages-resto{
+	    right: 35px;
     }
 }
 .restaurant_menu h2{
@@ -115,94 +123,34 @@ button{
 .commander_bouton{
     text-align: center;
 }
-/*  Animation coeur - remplissage dégradé progressif  */
-.checkbox-like-restaurant {
-	position: absolute;
-	right: 35px;
-	height: 25px;
-	font-size: 25px;
-	cursor: pointer;
-}
-.checkbox-like-restaurant input[type="checkbox"]:checked ~ .unchecked {
-  	display: none;
-}
-
-.checkbox-like-restaurant input[type="checkbox"]:checked ~ .checked {
-  	display: inline-block;
-    color: rgba(255, 255, 255, 0);
-}
-
-.checkbox-like-restaurant input[type="checkbox"], .checkbox-like-restaurant .checked {
-    display: none;
-  	animation: like 0.5s;
-    animation-fill-mode: forwards;
-    transition: all 0.3s linear 0s;
-}
-@keyframes like {
-	0% { 
-      height: 0%;
-  }
-  10% {
-    height: 10%;
-}
-  25%{
-        height:25%;
-    }
-    50% { 
-      height: 50%;
-    }
-    75%{
-      height:75%;
-  }
-	100% { 
-      height: 100%;
-      background: linear-gradient(to bottom, $primary-color,$secondary-color);
-      -webkit-background-clip: text;
-      background-clip: text;
-  	}
-  }
-/* Animation - apparition des plats au chargement de la page */
-.format_plat{
-    animation: fadein 1s;
-}
-.entree1, .plat1, .dessert1{
-    animation-delay: 50ms;
-	animation-fill-mode: forwards;
-	opacity:0;
-}
-.entree2, .plat2, .dessert2{
-    animation-delay: 150ms;
-	animation-fill-mode: forwards;
-	opacity:0;
-}
-.entree3, .plat3, .dessert3{
-    animation-delay: 300ms;
-	animation-fill-mode: forwards;
-	opacity:0;
-}
-@keyframes fadein {
-    from {
-		transform: translateY(20px);
-        opacity:0;
-    }
-    to {
-		transform: translateY(0);
-        opacity:1;
-    }
-}
   @media screen and (min-width: $tablette-version) and (max-width: $desktop-version){
       .restaurant_page{
         padding-left: 30px;
         padding-right: 30px;
       }
+      .restaurant_page_restaurant2{
+        margin-top: -73%;
+    }
   }
   @media screen and (min-width: $desktop-version){
     main .image_restaurant{
         object-fit: cover;
         object-position: 0 -200px;
     }
+    #image_restaurant2{
+        object-fit: cover;
+        max-width: 100%;
+        max-height: 600px;/*648px*/
+        object-position: 0 -289px;
+       /* object-position: 290px 0px;
+        transform: rotate(-90deg);
+        margin-top: -127px;*/
+    }
     .restaurant_page{
         margin-top: -35%;
+    }
+    .restaurant_page_restaurant2{
+        margin-top: -13%;
     }
     .header_menu{
         justify-content: center;
