@@ -135,16 +135,13 @@ button{
   @media screen and (min-width: $desktop-version){
     main .image_restaurant{
         object-fit: cover;
-        object-position: 0 -200px;
+        object-position: 0 -330px;
     }
     #image_restaurant2{
         object-fit: cover;
         max-width: 100%;
-        max-height: 600px;/*648px*/
-        object-position: 0 -289px;
-       /* object-position: 290px 0px;
-        transform: rotate(-90deg);
-        margin-top: -127px;*/
+        max-height: 600px;
+        object-position: 0 -591px;
     }
     .restaurant_page{
         margin-top: -35%;
