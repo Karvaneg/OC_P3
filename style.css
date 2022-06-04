@@ -35,7 +35,7 @@ li {
   flex-direction: row;
   height: 100%;
   width: 100%;
-  animation: disappear 50ms 2.6s forwards;
+  animation: disappear 50ms 1500ms forwards;
 }
 .animation_avant_chargement i {
   padding-left: 2px;
@@ -48,7 +48,7 @@ li {
   border-radius: 2px;
   -webkit-box-shadow: 2px 2px 5px 2px #D2D2D2;
   box-shadow: 2px 2px 5px 2px #D2D2D2;
-  animation: tilt 2.6s cubic-bezier(0.955, -0.01, 1, 1);
+  animation: tilt 1.5s cubic-bezier(0.955, -0.01, 1, 1);
   animation-fill-mode: forwards;
   transform-origin: 100% 100%;
 }
@@ -68,29 +68,29 @@ li {
   border-width: 0px 1px 1px 0px;
 }
 .animation_avant_chargement i:nth-child(2) {
-  animation-delay: 0.3s;
+  animation-delay: 400ms;
 }
 .animation_avant_chargement i:nth-child(3) {
-  animation-delay: 0.6s;
+  animation-delay: 550ms;
 }
 .animation_avant_chargement i:nth-child(4) {
-  animation-delay: 0.8s;
+  animation-delay: 700ms;
 }
 .animation_avant_chargement i:nth-child(5) {
-  animation-delay: 1.2s;
+  animation-delay: 850ms;
 }
 .animation_avant_chargement i:nth-child(6) {
-  animation-delay: 1.5s;
+  animation-delay: 1000ms;
 }
 .animation_avant_chargement i:nth-child(7) {
-  animation-delay: 1.8s;
+  animation-delay: 1150ms;
 }
 .animation_avant_chargement i:nth-child(8) {
-  animation-delay: 2.1s;
+  animation-delay: 1300ms;
 }
 .animation_avant_chargement i:nth-child(9) {
   animation-name: tilt-last;
-  animation-delay: 2.4s;
+  animation-delay: 1450ms;
 }
 
 @keyframes tilt {
@@ -147,7 +147,7 @@ li {
 }
 /*Page blanche pendant 3s avant le chargement de la page d'accueil*/
 .commencer_chargement {
-  animation: page_blanche 3s;
+  animation: page_blanche 1500ms;
 }
 
 @keyframes page_blanche {
