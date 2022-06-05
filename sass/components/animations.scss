@@ -10,7 +10,7 @@
             flex-direction: row;
             height: 100%;
             width: 100%;
-            animation: disappear 50ms 1500ms forwards;
+            animation: 0ms 3000ms forwards disappear;
                     & i{
                     padding-left: 2px;
                     padding-top: 18px;
@@ -22,7 +22,7 @@
                     border-radius: 2px;
                     -webkit-box-shadow: 2px 2px 5px 2px #D2D2D2; 
                     box-shadow: 2px 2px 5px 2px #D2D2D2;
-                    animation: tilt 1.5s cubic-bezier(0.955, -0.010, 1.000, 1.000);
+                    animation:  cubic-bezier(0.955, -0.010, 1.000, 1.000) tilt;
                     animation-fill-mode: forwards;
                     transform-origin: 100% 100%;
                         &.primary-color{
@@ -40,30 +40,42 @@
                         border: solid #609386;
                         border-width: 0px 1px 1px 0px;
                         }
+                        &:nth-child(1) {
+                            animation-delay: 300ms;
+                            animation-duration: 300ms;
+                            }
                         &:nth-child(2) {
-                        animation-delay: 400ms;
+                        animation-delay: 600ms;
+                        animation-duration: 300ms;
                         }
                         &:nth-child(3) {
-                        animation-delay: 550ms;
+                        animation-delay: 900ms;
+                        animation-duration: 300ms;
                         }
                         &:nth-child(4) {
-                        animation-delay: 700ms;
+                        animation-delay: 1200ms;
+                        animation-duration: 333ms;
                         }
                         &:nth-child(5) {
-                        animation-delay: 850ms;
+                        animation-delay: 1500ms;
+                        animation-duration: 300ms;
                         }
                         &:nth-child(6) {
-                        animation-delay: 1000ms;
+                        animation-delay: 1800ms;
+                        animation-duration: 300ms;
                         }
                         &:nth-child(7) {
-                        animation-delay: 1150ms;
+                        animation-delay: 2100ms;
+                        animation-duration: 300ms;
                         }
                         &:nth-child(8) {
-                        animation-delay: 1300ms;
+                        animation-delay: 2400ms;
+                        animation-duration: 300ms;
                         }
                         &:nth-child(9) {
                         animation-name: tilt-last;
-                        animation-delay: 1450ms;
+                        animation-delay: 2700ms;
+                        animation-duration: 250ms;
                         }
                     }
                 }
@@ -74,18 +86,30 @@
                 transform: rotate(0deg);
             }
             10%{ 
-                transform: rotate(70deg);
+                transform: rotate(10deg);
+            }
+            20%{ 
+                transform: rotate(20deg);
+            }
+            30%{ 
+                transform: rotate(30deg);
+            }
+            40%{ 
+                transform: rotate(40deg);
+            }
+            50%{ 
+                transform: rotate(50deg);
             }
             60%{
-                transform: rotate(70deg);
+                transform: rotate(60deg);
             }
             70%{
                 transform: rotate( 70deg);
             }
             100%{
-                opacity: 0;
+              /*  opacity: 0;*/
                 transform: rotate( 70deg);
-                visibility: hidden;
+             /*   visibility: hidden;*/
             }
         }
         @keyframes tilt-last{
@@ -95,18 +119,18 @@
                 transform: rotate(0deg);
             }
             10%{
-                transform: rotate(90deg);
+                transform: rotate(10deg);
             }
             60%{
-                transform: rotate(90deg);
+                transform: rotate(60deg);
             }
             70%{
-                transform: rotate( 90deg);
+                transform: rotate( 70deg);
             }
             100%{
-                opacity: 0;
+               /* opacity: 0;*/
                 transform: rotate( 90deg);
-                visibility: hidden;
+              /*  visibility: hidden;*/
             }
         }
         @keyframes disappear{
@@ -121,7 +145,7 @@
         }
     /*Page blanche pendant 3s avant le chargement de la page d'accueil*/
         .commencer_chargement {
-	        animation: page_blanche 1500ms;
+	        animation: page_blanche 3000ms;
         }
         @keyframes page_blanche {
 	        0%{
