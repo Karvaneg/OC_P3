@@ -10,7 +10,7 @@
             flex-direction: row;
             height: 100%;
             width: 100%;
-            animation: 0ms 2600ms forwards disappear;
+            animation: 0ms 2600ms forwards disparition;
                     & i{
                     padding-left: 2px;
                     padding-top: 18px;
@@ -22,7 +22,7 @@
                     border-radius: 2px;
                     -webkit-box-shadow: 2px 2px 5px 2px #D2D2D2; 
                     box-shadow: 2px 2px 5px 2px #D2D2D2;
-                    animation:  cubic-bezier(0.955, -0.010, 1.000, 1.000) tilt;
+                    animation:  cubic-bezier(0.955, -0.010, 1.000, 1.000) inclinaison-dominos;
                     animation-fill-mode: forwards;
                     transform-origin: 100% 100%;
                         &.primary-color{
@@ -73,13 +73,13 @@
                         animation-duration: 250ms;
                         }
                         &:nth-child(9) {
-                        animation-name: tilt-last;
+                        animation-name: inclinaison-dernier-domino;
                         animation-delay: 2300ms;
                         animation-duration: 250ms;
                         }
                     }
                 }
-        @keyframes tilt {
+        @keyframes inclinaison-dominos {
             0%{
                 opacity: 1;
                 visibility: visible;
@@ -107,12 +107,10 @@
                 transform: rotate( 70deg);
             }
             100%{
-              /*  opacity: 0;*/
                 transform: rotate( 70deg);
-             /*   visibility: hidden;*/
             }
         }
-        @keyframes tilt-last{
+        @keyframes inclinaison-dernier-domino{
             0%{
                 opacity: 1;
                 visibility: visible;
@@ -128,12 +126,10 @@
                 transform: rotate( 70deg);
             }
             100%{
-               /* opacity: 0;*/
                 transform: rotate( 90deg);
-              /*  visibility: hidden;*/
             }
         }
-        @keyframes disappear{
+        @keyframes disparition{
             from{
                 transform: scale(1);
                 transform: translate(0);
@@ -203,7 +199,7 @@
     }
 /* Animation - apparition des plats au chargement de la page */
 .format_plat{
-    animation: fadein 1s;
+    animation: apparition-plats 1s;
 }
 .entree1, .plat1, .dessert1{
     animation-delay: 50ms;
@@ -225,7 +221,7 @@
 	animation-fill-mode: forwards;
 	opacity:0;
 }
-@keyframes fadein {
+@keyframes apparition-plats {
     from {
 		transform: translateY(20px);
         opacity:0;
