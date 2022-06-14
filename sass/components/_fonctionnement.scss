@@ -10,7 +10,8 @@
 ol {
     counter-reset: compteListe;
   & li::before {
-    counter-increment: compteListe 1;
+    counter-increment: compteListe 1;/*incrémente de 1 en 1*/
+    /* on ajoute un chiffre avant les balises li*/
     content: counter(compteListe) " ";
     background: $primary-color;
     border-radius:50%;

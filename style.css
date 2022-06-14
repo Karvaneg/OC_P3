@@ -343,7 +343,6 @@ li {
   margin-top: 20px;
 }
 .recherche button:hover {
-  /* background: linear-gradient(356deg, lighten($primary-color, 10%) 0%, lighten($secondary-color, 10%) 100%);*/
   box-shadow: 0px 4px 5px 0px rgba(0, 0, 0, 0.4);
   opacity: 0.6;
   transform: scale(1.1);
@@ -364,6 +363,8 @@ ol {
 }
 ol li::before {
   counter-increment: compteListe 1;
+  /*incrémente de 1 en 1*/
+  /* on ajoute un chiffre avant les balises li*/
   content: counter(compteListe) " ";
   background: #9356DC;
   border-radius: 50%;
@@ -656,7 +657,6 @@ button {
   width: 200px;
 }
 button:hover {
-  /* background: linear-gradient(356deg, lighten($primary-color, 10%) 0%, lighten($secondary-color, 10%) 100%);*/
   box-shadow: 0px 4px 5px 0px rgba(0, 0, 0, 0.4);
   opacity: 0.6;
   transform: scale(1.1);
