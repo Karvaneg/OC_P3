@@ -150,7 +150,7 @@ des points de suspension. Un exemple de l’effet attendu est fourni.
 
 ## Evaluation
 
-_Évaluation_ : mardi 14 juin 2022
+___Évaluation___ : mardi 14 juin 2022
 #### -> `Projet validé`
 
 
@@ -187,7 +187,7 @@ _Évaluation_ : mardi 14 juin 2022
 
 ### Livrables
 
-_Points forts_ : __Bonne prise en main de sass__ 
+___Points forts___ : __Bonne prise en main de sass__ 
 
 
 ### Soutenance
