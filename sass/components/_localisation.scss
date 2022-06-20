@@ -1,0 +1,39 @@
+.localisation{
+    box-shadow: inset 0px 2px 5px $background-color-localisation-ombre;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: $background-color-localisation;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    &_selection-lieu{
+        text-align: center;
+        background: none;
+        border: none;
+        font-weight: bold;
+        height: 20px;
+    }
+}
+input[type="search"]{
+    height: 23px;
+    &:focus{
+      background-color: $tertiary-color;
+      color: white;
+    }
+    &:active{
+      background-color: $tertiary-color;
+      color: white;
+    }
+    &:-webkit-autofill{
+      box-shadow: 0 0 0px 1000px $background-color-localisation inset;
+      -webkit-box-shadow: 0 0 0px 1000px $background-color-localisation inset;
+      &:hover{
+        box-shadow: 0 0 0px 1000px $background-color-localisation inset;
+        -webkit-box-shadow: 0 0 0px 1000px $background-color-localisation inset;
+      }
+      &:focus{
+        box-shadow: 0 0 0px 1000px $background-color-localisation inset;
+        -webkit-box-shadow: 0 0 0px 1000px $background-color-localisation inset;
+      }
+    }
+}

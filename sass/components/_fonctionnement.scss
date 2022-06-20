@@ -8,6 +8,7 @@
     }
 }
 ol {
+    /* On réinitialise compteListe à 0 */
     counter-reset: compteListe;
   & li::before {
     counter-increment: compteListe 1;/*incrémente de 1 en 1*/

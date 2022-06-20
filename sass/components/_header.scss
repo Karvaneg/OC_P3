@@ -13,19 +13,6 @@
         margin-bottom: 15px
         }
     }
-    &_localisation{
-        box-shadow: inset 0px 2px 5px $background-color-localisation;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        background: #e6e6e7;
-        padding-top: 20px;
-        padding-bottom: 20px;
-        &_selection-lieu{
-            font-weight: bold;
-            margin-left: 20px;
-        }
-    }
     &_retour_accueil{
         position: absolute;
         left: 20px;
